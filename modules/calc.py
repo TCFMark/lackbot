@@ -9,7 +9,7 @@ http://inamidst.com/phenny/
 """
 
 import re
-import web
+import web, HTMLParser
 
 r_result = re.compile(r'(?i)<A NAME=results>(.*?)</A>')
 r_tag = re.compile(r'<\S+.*?>')
@@ -107,6 +107,9 @@ def wa(phenny, input):
    uri = 'http://tumbolia.appspot.com/wa/'
    answer = web.get(uri + web.urllib.quote(query.replace('+', '%2B')))
    if answer: 
+      answer = HTMLParser.HTMLParser().unescape(answer)
+      answer = answer.replace('->', ': ')
+      answer = answer.replace(';', ' | ')
       phenny.say(answer)
    else: phenny.reply('Sorry, no result.')
 wa.commands = ['wa']

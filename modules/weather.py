@@ -61,8 +61,8 @@ def code(phenny, search):
       if name == '?': return False
       sumOfSquares = (99999999999999999999999999999, 'ICAO')
       for icao_code, lat, lon in data: 
-         latDiff = abs(latitude - lat)
-         lonDiff = abs(longitude - lon)
+         latDiff = abs(float(latitude) - float(lat))
+         lonDiff = abs(float(longitude) - float(lon))
          diff = (latDiff * latDiff) + (lonDiff * lonDiff)
          if diff < sumOfSquares[0]: 
             sumOfSquares = (diff, icao_code)

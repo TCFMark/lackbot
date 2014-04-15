@@ -149,8 +149,9 @@ def wikipedia(term, language='en', last=False):
    term = term.decode('utf-8').encode('utf-8')
    return sentence + ' - ' + (wikiuri % (language, term))
 
-def wik(phenny, input): 
-   origterm = input.groups()[1]
+def wik(phenny, input, origterm=''): 
+   if not origterm:
+      origterm = input.groups()[1]
    if not origterm: 
       return phenny.say('Perhaps you meant ".wik Zen"?')
    origterm = origterm.encode('utf-8')
@@ -177,6 +178,22 @@ def wik(phenny, input):
 
 wik.commands = ['wik']
 wik.priority = 'high'
+
+def rwik(phenny, input):
+   import xml.etree.ElementTree as ET
+
+   from urllib2 import Request, urlopen, URLError
+   request = Request('http://en.wikipedia.org/w/api.php?action=query&list=random&rnnamespace=0&rnlimit=1&format=xml')
+   try:
+      response = urlopen(request).read()
+      root = ET.fromstring(response)
+      for page in root.iter('page'):
+         atts = page.attrib
+         wik(phenny, input, atts['title'])
+   except URLError, e:
+      phenny.say("No response from shitty Wikipedia APIs, sorry.")
+rwik.commands = ['rwik']
+rwik.priority = 'high'
 
 if __name__ == '__main__': 
    print __doc__.strip()

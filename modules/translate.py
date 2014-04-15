@@ -8,8 +8,11 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
+logdir = "/home/mark/irclogs/lackbot/translate/"
+
 import re, urllib
 import web
+import random
 
 def translate(text, input='auto', output='en'): 
    raw = False
@@ -113,14 +116,22 @@ def tr2(phenny, input):
 tr2.commands = ['tr']
 tr2.priority = 'low'
 
-def mangle(phenny, input): 
+def mangle(tring): 
    import time
-
-   phrase = input.group(2).encode('utf-8')
-   for lang in ['fr', 'de', 'es', 'it', 'ja']: 
+   loglist = []
+   
+   phrase = tring.encode('utf-8')
+   loglist.append(phrase)
+   languages = ['zh-CN', 'fi', 'hu', 'ru', 'ja', 'zh-TW', 'ko', 'ar', 'iw', 'hi', 'ur']
+   random.shuffle(languages)
+   for i in range(0, 6): 
       backup = phrase[:]
-      phrase, _lang = translate(phrase, 'en', lang)
+      try:
+         phrase, _lang = translate(phrase, 'en', languages[i])
+      except ValueError:
+         break
       phrase = phrase.encode("utf-8")
+      loglist.append(phrase + " (en -> " + languages[i] + ")")
 
       if not phrase: 
          phrase = backup[:]
@@ -128,18 +139,29 @@ def mangle(phenny, input):
       time.sleep(0.25)
 
       backup = phrase[:]
-      phrase, _lang = translate(phrase, lang, 'en')
+      try:
+         phrase, _lang = translate(phrase, languages[i], 'en')
+      except ValueError:
+         break
       phrase = phrase.encode("utf-8")
+      loglist.append(phrase + " (" + languages[i] + " -> en)")
 
       if not phrase: 
          phrase = backup[:]
          break
       time.sleep(0.25)
+
+   logfile = open(logdir + "mangle-" + time.strftime("%Y%m%d") + ".txt", "a+")
+   for line in loglist:
+      logfile.write(line + "\n")
+   logfile.write("--------\n")
+   logfile.close()
 
    phrase = phrase.replace(' ,', ',').replace(' .', '.')
    phrase = phrase.strip(' ,')
-   phenny.reply(phrase or 'ERRORS SRY')
-mangle.commands = ['mangle']
+   return phrase
+#mangle.commands = ['mangle']
+#mangle.rule = r'(lackbot:)\s+(.*)'
 
 if __name__ == '__main__': 
    print __doc__.strip()

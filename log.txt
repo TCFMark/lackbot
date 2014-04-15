@@ -1,0 +1,1212 @@
+Script completed successfully.
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x98e38b4>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x98e387c>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+Traceback (most recent call last):
+  File "/home/mark/ircbots/phenny/bot.py", line 188, in call
+    try: func(phenny, input)
+  File "/home/mark/ircbots/phenny/modules/wikipedia.py", line 191, in rwik
+    phenny.say(title)
+NameError: global name 'title' is not defined
+
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x98343ac>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x98e3844>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x991a614>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x98e3304>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+Traceback (most recent call last):
+  File "/home/mark/ircbots/phenny/bot.py", line 188, in call
+    try: func(phenny, input)
+  File "/home/mark/ircbots/phenny/modules/wikipedia.py", line 191, in rwik
+    phenny.say(atts[title])
+NameError: global name 'title' is not defined
+
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x9929294>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x98e333c>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x9929ca4>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929c6c>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+Traceback (most recent call last):
+  File "/home/mark/ircbots/phenny/bot.py", line 188, in call
+    try: func(phenny, input)
+  File "/home/mark/ircbots/phenny/modules/wikipedia.py", line 191, in rwik
+    input.groups()[1] = atts['title']
+TypeError: 'tuple' object does not support item assignment
+
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x9929e2c>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929e9c>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x993379c>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929e64>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x9929bc4>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929f7c>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x993333c>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929f44>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x993333c>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929f44>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x993333c>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929f44>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x993333c>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929f44>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x993333c>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929f44>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x993333c>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929f44>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x993333c>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929f44>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x993333c>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929f44>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x993333c>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929f44>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(tr)(?: +(.*))?$ <function tr2 at 0x983433c>
+high ^\.(g)(?: +(.*))?$ <function g at 0x98f71b4>
+low lackbot[,:] +(?i)(?:help|doc) +([A-Za-z]+)(?:\?+)?$ <function doc at 0xb72aa224>
+medium ^\.(bing)(?: +(.*))?$ <function bing at 0x98f7294>
+medium (?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|(\s|^)bug(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).* <function work at 0x98ca80c>
+medium ^\.(bytes)(?: +(.*))?$ <function bytes at 0x9849f0c>
+medium \.(weather)\b(?: +(?:(.*)))? <function f_weather at 0x98cae2c>
+medium ^\.(o)(?: +(.*))?$ <function o at 0x98cab54>
+medium ^\.(ogc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(oldgc)(?: +(.*))?$ <function oldgc at 0x98f71ec>
+medium ^\.(in)(?: +(.*))?$ <function remind at 0x98f795c>
+medium ^\.(u)(?: +(.*))?$ <function u at 0x9849e9c>
+medium ^\.(w)(?: +(.*))?$ <function w at 0x98ca994>
+medium (?i).*?nsfw.* <function nsfw at 0x98ca684>
+high \.(ety)\b(?: +(?:(.+?)$))? <function f_etymology at 0x98e3b8c>
+medium (?i)(hi|hello|hey) lackbot[ \t]*$ <function hello at 0x98698b4>
+medium ^\.(at)(?: +(.*))?$ <function at at 0x98f7a3c>
+low lackbot[,:] +(?i)help(?:[?!]+)?$ <function help at 0xb72aa294>
+high ^\.(tock)(?: +(.*))?$ <function tock at 0x9849b8c>
+medium ^\.(search)(?: +(.*))?$ <function search at 0x98f733c>
+medium ^\.(tw)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+medium ^\.(twitter)(?: +(.*))?$ <function twitter at 0x98e3ed4>
+low (.*) <function startup at 0x9860844>
+medium (?i).*?rediculous.* <function rediculous at 0x98ca6bc>
+medium ^\.(title)(?: +(.*))?$ <function f_title at 0x98f7684>
+low ^\.(beats)(?: +(.*))?$ <function beats at 0x9849a74>
+medium ^\.(t)(?: +(.*))?$ <function f_time at 0x9849a04>
+medium thanks(,)? lackbot[ \t]*$ <function thanks at 0x98ca5dc>
+medium (lackbot:)\s+(.*) <function chat at 0x983441c>
+medium ^\.(duck)(?: +(.*))?$ <function duck at 0x98f7304>
+medium ^\.(ddg)(?: +(.*))?$ <function duck at 0x98f7304>
+medium \.(seen)\b(?: +(?:(\S+)))? <function seen at 0xb72aa41c>
+low (.*) <function message at 0xb72c1cdc>
+high ^\.(gc)(?: +(.*))?$ <function gc at 0x98f748c>
+low lackbot[,:] +(reload) +(\S+)? <function f_reload at 0x98f2ca4>
+low ^\.(stats)(?: +(.*))?$ <function stats at 0xb72aa2cc>
+medium ^\.(quip)(?: +(.*))?$ <function quip at 0x98343e4>
+medium \.(val)\b(?: +(?:(?i)(\S+)))? <function val at 0x98cac34>
+high ^\.(ngc)(?: +(.*))?$ <function ngc at 0x98f7454>
+medium lackbot: idiot <function idiot at 0x98ca5a4>
+medium ^\.(suggest)(?: +(.*))?$ <function suggest at 0x98f7374>
+medium (?i)wow$ <function wow at 0x98ca64c>
+medium ^\.(py)(?: +(.*))?$ <function py at 0x98eb17c>
+low lackbot[,:] +(?:([a-z]{2}) +)?(?:([a-z]{2}|en-raw) +)?["“](.+?)["”]\? *$ <function tr at 0x9834304>
+medium (?i)lol.* <function lol at 0x98ca6f4>
+medium ^\.(snippet)(?: +(.*))?$ <function snippet at 0x98cab8c>
+high ^\.(rwik)(?: +(.*))?$ <function rwik at 0x993333c>
+medium ^\.(gcs)(?: +(.*))?$ <function gcs at 0x98f7224>
+medium ^\.(comp)(?: +(.*))?$ <function gcs at 0x98f7224>
+low .*(http[s]?://[^<> "\x01]+)[,.]? <function noteuri at 0x98f76bc>
+medium ^\.(party)(?: +(.*))?$ <function party at 0x98f74fc>
+low (.*) <function f_note at 0xb72aa4fc>
+medium .*?(^|\s)[Ss]+[HZhz]?[bcdfgjklmnpqrtvwxBCDFGJKLMNPQRTVWX].* <function correct at 0xb72aa1ec>
+high lackbot! <function interjection at 0x98ca56c>
+low ^\.(yi)(?: +(.*))?$ <function yi at 0x9849b1c>
+high ^\.(npl)(?: +(.*))?$ <function npl at 0x9849bfc>
+medium ^\.(head)(?: +(.*))?$ <function head at 0x98f7614>
+medium lackbot[,:] +(tell) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+medium lackbot[,:] +(ask) +(\S+) (.*) <function f_remind at 0xb72c1a74>
+high ^\.(wik)(?: +(.*))?$ <function wik at 0x9929f44>
+medium (?i)hah.* <function haha at 0x98ca72c>
+medium ^\.(c)(?: +(.*))?$ <function c at 0x98eb224>
+medium ^\.(calc)(?: +(.*))?$ <function calc at 0x98ebb8c>
+medium ^\.(dict)(?: +(.*))?$ <function encarta at 0x98ca9cc>
+medium (?i)wtf.* <function wtf at 0x98ca614>
+medium ^\.(wa)(?: +(.*))?$ <function wa at 0x98ebb54>
+low ^\.(commands)(?: +(.*))?$ <function commands at 0xb72aa25c>
+low ^\.(
