@@ -142,6 +142,11 @@ def wikipedia(term, language='en', last=False):
          term = search(term)
          return wikipedia(term, language=language, last=True)
       return None
+   
+   # Return only the sentence if the global variable is set to True
+   # I'm certain this isn't the right way to do this...
+   if sentenceOnly is True:
+      return sentence
 
    sentence = '"' + sentence.replace('"', "'") + '"'
    sentence = sentence.decode('utf-8').encode('utf-8')
@@ -151,7 +156,7 @@ def wikipedia(term, language='en', last=False):
 
 def wikwrapper(origterm): 
    if not origterm: 
-      return phenny.say('Perhaps you meant ".wik Zen"?')
+      return 'Perhaps you meant ".wik Zen"?'
    origterm = origterm.encode('utf-8')
 
    term = urllib.unquote(origterm)
@@ -200,9 +205,12 @@ rwik.commands = ['rwik']
 rwik.priority = 'high'
 
 def fact(phenny, input):
+   global sentenceOnly
+   sentenceOnly = True
    fact = randomArticle()
    fact = translate.mangle(fact)
    phenny.say(fact)
+   sentenceOnly = False
 fact.commands = ['fact']
 fact.priority = 'high'
 
