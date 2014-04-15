@@ -149,9 +149,7 @@ def wikipedia(term, language='en', last=False):
    term = term.decode('utf-8').encode('utf-8')
    return sentence + ' - ' + (wikiuri % (language, term))
 
-def wik(phenny, input, origterm=''): 
-   if not origterm:
-      origterm = input.groups()[1]
+def wikwrapper(origterm): 
    if not origterm: 
       return phenny.say('Perhaps you meant ".wik Zen"?')
    origterm = origterm.encode('utf-8')
@@ -170,12 +168,15 @@ def wik(phenny, input, origterm=''):
    except IOError: 
       args = (language, wikiuri % (language, term))
       error = "Can't connect to %s.wikipedia.org (%s)" % args
-      return phenny.say(error)
+      return error
 
    if result is not None: 
-      phenny.say(result)
-   else: phenny.say('Can\'t find anything in Wikipedia for "%s".' % origterm)
+      return result
+   else: 
+      return 'Can\'t find anything in Wikipedia for "%s".' % origterm
 
+def wik(phenny, input):
+   phenny.say(wikwrapper(input.group(2)))
 wik.commands = ['wik']
 wik.priority = 'high'
 
@@ -189,11 +190,13 @@ def rwik(phenny, input):
       root = ET.fromstring(response)
       for page in root.iter('page'):
          atts = page.attrib
-         wik(phenny, input, atts['title'])
+         wikwrapper(atts['title'])
    except URLError, e:
       phenny.say("No response from shitty Wikipedia APIs, sorry.")
 rwik.commands = ['rwik']
 rwik.priority = 'high'
+
+
 
 if __name__ == '__main__': 
    print __doc__.strip()
