@@ -180,7 +180,7 @@ def wik(phenny, input):
 wik.commands = ['wik']
 wik.priority = 'high'
 
-def rwik(phenny, input):
+def randomArticle():
    import xml.etree.ElementTree as ET
 
    from urllib2 import Request, urlopen, URLError
@@ -190,13 +190,14 @@ def rwik(phenny, input):
       root = ET.fromstring(response)
       for page in root.iter('page'):
          atts = page.attrib
-         phenny.say(wikwrapper(atts['title']))
+         return wikwrapper(atts['title'])
    except URLError, e:
-      phenny.say("No response from shitty Wikipedia APIs, sorry.")
+      return "No response from shitty Wikipedia APIs, sorry."
+
+def rwik(phenny, input):
+   phenny.say(randomArticle())
 rwik.commands = ['rwik']
 rwik.priority = 'high'
-
-
 
 if __name__ == '__main__': 
    print __doc__.strip()
