@@ -8,7 +8,8 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
-logdir = "/home/mark/irclogs/lackbot/translate/"
+# Commented out due to issue #5
+#logdir = "logs/translate/"
 
 import re, urllib
 import web
@@ -151,11 +152,12 @@ def mangle(tring):
          break
       time.sleep(0.25)
 
-   logfile = open(logdir + "mangle-" + time.strftime("%Y%m%d") + ".txt", "a+")
-   for line in loglist:
-      logfile.write(line + "\n")
-   logfile.write("--------\n")
-   logfile.close()
+# Commented out due to issue #5
+#   logfile = open(logdir + "mangle-" + time.strftime("%Y%m%d") + ".txt", "a+")
+#   for line in loglist:
+#      logfile.write(line + "\n")
+#   logfile.write("--------\n")
+#   logfile.close()
 
    phrase = phrase.replace(' ,', ',').replace(' .', '.')
    phrase = phrase.strip(' ,')
