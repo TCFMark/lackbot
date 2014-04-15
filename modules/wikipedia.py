@@ -8,7 +8,7 @@ http://inamidst.com/phenny/
 """
 
 import re, urllib, gzip, StringIO
-import web
+import web, translate
 
 wikiuri = 'http://%s.wikipedia.org/wiki/%s'
 # wikisearch = 'http://%s.wikipedia.org/wiki/Special:Search?' \
@@ -198,6 +198,13 @@ def rwik(phenny, input):
    phenny.say(randomArticle())
 rwik.commands = ['rwik']
 rwik.priority = 'high'
+
+def fact(phenny, input):
+   fact = randomArticle()
+   fact = translate.mangle(fact)
+   phenny.say(fact)
+fact.commands = ['fact']
+fact.priority = 'high'
 
 if __name__ == '__main__': 
    print __doc__.strip()
