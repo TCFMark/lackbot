@@ -190,7 +190,7 @@ def rwik(phenny, input):
       root = ET.fromstring(response)
       for page in root.iter('page'):
          atts = page.attrib
-         wikwrapper(atts['title'])
+         phenny.say(wikwrapper(atts['title']))
    except URLError, e:
       phenny.say("No response from shitty Wikipedia APIs, sorry.")
 rwik.commands = ['rwik']
