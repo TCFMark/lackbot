@@ -7,7 +7,7 @@ About: http://inamidst.com/phenny/
 
 import random
 
-# getWordList is based on 
+# getWordList is based on
 # https://mail.python.org/pipermail/tutor/2001-June/006301.html
 def getWordList(minwords):
    import string, os
