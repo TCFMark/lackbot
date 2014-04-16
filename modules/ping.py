@@ -7,6 +7,27 @@ About: http://inamidst.com/phenny/
 
 import random
 
+# getWordList is based on 
+# https://mail.python.org/pipermail/tutor/2001-June/006301.html
+def getWordList(minwords):
+   import string, os
+   wordfile = '/usr/share/dict/words'
+   stat = os.stat(wordfile)
+   # the filesize is the 7th element of the array
+   flen = stat[6]
+   f = open(wordfile)
+   words = []
+
+   while len(words) < minwords:
+      # seek to a random offset in the file
+      f.seek(int(random.random() * flen))
+      # do a single read with sufficient characters
+      chars = f.read(minwords * 30)
+      # split it on white space
+      words = string.split(chars)
+   
+   return words
+
 def hello(phenny, input): 
    greeting = random.choice(('Hi', 'Hey', 'Hello'))
    punctuation = random.choice(('', '!', ' :)', ' <3'))
@@ -32,9 +53,14 @@ def wtf(phenny, input):
 wtf.rule = r'(?i)wtf.*'
 
 def wow(phenny, input):
-   phenny.say(random.choice(["so ", "such "]) + phenny.nick)
-   phenny.say(random.choice(["many ", "how "]) + input.nick)
-   phenny.say(random.choice(["much ", "very "]) + input.sender)
+   try:         
+      phenny.say(random.choice(["so ", "such "]) + getWordList(1)[1])
+      phenny.say(random.choice(["many ", "how "]) + getWordList(1)[1])
+      phenny.say(random.choice(["much ", "very "]) + random.choice([phenny.nick, input.nick, input.sender]))
+   except OSError:
+      phenny.say(random.choice(["so ", "such "]) + phenny.nick)
+      phenny.say(random.choice(["many ", "how "]) + input.nick)
+      phenny.say(random.choice(["much ", "very "]) + input.sender)
 wow.rule = r'(?i)wow$'
 
 def nsfw(phenny, input):
