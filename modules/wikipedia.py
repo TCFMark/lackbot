@@ -214,7 +214,6 @@ def fact(phenny, input, firstAttempt=True):
       phenny.say(factoid)
    except UnicodeDecodeError:
       if firstAttempt is True:
-         phenny.say("I'm tired")
          fact(phenny, input, firstAttempt=False)
       else:
          import vincent
