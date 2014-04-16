@@ -204,12 +204,22 @@ def rwik(phenny, input):
 rwik.commands = ['rwik']
 rwik.priority = 'high'
 
-def fact(phenny, input):
+def fact(phenny, input, firstAttempt=True):
    global sentenceOnly
    sentenceOnly = True
-   fact = randomArticle()
-   fact = translate.mangle(fact)
-   phenny.say(fact)
+   
+   factoid = randomArticle()
+   try:
+      factoid = translate.mangle(factoid)
+      phenny.say(factoid)
+   except UnicodeDecodeError:
+      if firstAttempt is True:
+         phenny.say("I'm tired")
+         fact(phenny, input, firstAttempt=False)
+      else:
+         import vincent
+         phenny.say(vincent.question(factoid))
+
    sentenceOnly = False
 fact.commands = ['fact']
 fact.priority = 'high'
