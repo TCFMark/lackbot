@@ -162,7 +162,7 @@ def mangle(tring):
    phrase = phrase.replace(' ,', ',').replace(' .', '.')
    phrase = phrase.strip(' ,')
    return phrase
-#mangle.commands = ['mangle']
+mangle.commands = ['mangle']
 #mangle.rule = r'(lackbot:)\s+(.*)'
 
 if __name__ == '__main__': 
