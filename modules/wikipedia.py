@@ -8,7 +8,7 @@ http://inamidst.com/phenny/
 """
 
 import re, urllib, gzip, StringIO
-import web, translate
+import web, tcfparty
 
 wikiuri = 'http://%s.wikipedia.org/wiki/%s'
 # wikisearch = 'http://%s.wikipedia.org/wiki/Special:Search?' \
