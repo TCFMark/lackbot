@@ -36,6 +36,10 @@ def tcfparty(en1):
 			break
 		en0 = en1
 		en1 = en2
+
+	en2 = en2.replace(' ,', ',')
+	en2 = en2.replace(' .', '.')
+
 	return en2
 
 def limitLen(tring, limit):
