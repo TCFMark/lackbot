@@ -210,7 +210,7 @@ def fact(phenny, input, firstAttempt=True):
    
    factoid = randomArticle()
    try:
-      factoid = translate.mangle(factoid)
+      factoid = tcfparty.tcfparty(factoid)
       phenny.say(factoid)
    except UnicodeDecodeError:
       if firstAttempt is True:
