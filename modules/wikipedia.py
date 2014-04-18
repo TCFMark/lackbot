@@ -211,7 +211,7 @@ def fact(phenny, input, firstAttempt=True):
    factoid = randomArticle()
    try:
       factoid = tcfparty.tcfparty(factoid)
-      phenny.say(factoid)
+      phenny.say('Fact! ' + factoid)
    except UnicodeDecodeError:
       if firstAttempt is True:
          fact(phenny, input, firstAttempt=False)
