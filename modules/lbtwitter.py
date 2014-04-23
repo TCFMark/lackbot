@@ -35,6 +35,11 @@ def readtweet(phenny, input):
       twat = firstTimeAuth()
    response = twat.statuses.user_timeline(screen_name=input.group(2))
    
+   try: 
+      phenny.say(response[0]['text'] + ' (@' + response[0]['user']['screen_name'] + ')')
+   except IndexError:
+      phenny.say("No tweets found")
+   
 readtweet.commands = ['tw']
 readtweet.thread = True
 
