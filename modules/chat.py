@@ -3,14 +3,18 @@ chat.py - handle incoming $nick: requests sensibly
 '''
 
 import sys, random
-import translate, vincent
 
 def chat(phenny, input):
    phrase = input.group(1).strip()
-   selector = random.randint(1,4)
-   if selector == 1:
+   selector = random.randint(1,5)
+   if selector <= 1:
+      import vincent
       phenny.reply(vincent.question(phrase))
+   elif selector <= 2:
+      import lbtwitter
+      phenny.reply(lbtwitter.mangleRandomTweet())
    else:
-      phenny.reply(translate.mangle(phrase))
+      import tcfparty
+      phenny.reply(tcfparty.tcfparty(phrase))
 chat.rule = r'$nickname:\s+(.*)'
 

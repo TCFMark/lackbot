@@ -69,7 +69,7 @@ def randomTweet(phenny, input):
 randomTweet.commands = ['rtw']
 randomTweet.thread = True
 
-def mangleRandomTweet(phenny, input):
+def mangleRandomTweet():
    import tcfparty
    
    tweet = getRandomTweet()
@@ -80,9 +80,12 @@ def mangleRandomTweet(phenny, input):
    
    text = tweet['text']
    text = tcfparty.tcfparty(text)
-   phenny.say(text)
-mangleRandomTweet.commands = ['mood']
-mangleRandomTweet.thread = True
+   return text
+
+def mood(phenny, input):
+   phenny.say(mangleRandomTweet())
+mood.commands = ['mood']
+mood.thread = True
 
 if __name__ == '__main__':
    print __doc__
