@@ -10,6 +10,7 @@ def tcfparty(en1):
 	en0 = None
 	count = 0
 	en1 = en1.encode('utf-8')
+	input = en1
 
 	for x in range(0, 32):
 		count += 1
@@ -37,8 +38,11 @@ def tcfparty(en1):
 		en0 = en1
 		en1 = en2
 
-	en2 = en2.replace(' ,', ',')
-	en2 = en2.replace(' .', '.')
+	if en2 is not None:
+		en2 = en2.replace(' ,', ',')
+		en2 = en2.replace(' .', '.')
+	else:
+		return input
 
 	return en2
 
