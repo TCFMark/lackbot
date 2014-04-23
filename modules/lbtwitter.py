@@ -25,12 +25,17 @@ if not os.path.exists(TWITTER_CREDENTIALS):
 
 oauth_token, oauth_secret = twitter.read_token_file(TWITTER_CREDENTIALS)
 
-t = twitter.Twitter(auth=twitter.OAuth(oauth_token, oauth_secret, consumer_token, consumer_secret))
+def firstTimeAuth():
+   twat = twitter.Twitter(auth=twitter.OAuth(oauth_token, oauth_secret, consumer_token, consumer_secret))
+   return twat
 
 def readtweet(phenny, input):
-   response = t.statuses.user_timeline(screen_name=input.group(2))
-   phenny.say(response)
-readtweet.commands = ['tw', 'twitter']
+   if 'twat' not in globals():
+      global twat
+      twat = firstTimeAuth()
+   response = twat.statuses.user_timeline(screen_name=input.group(2))
+   
+readtweet.commands = ['tw']
 readtweet.thread = True
 
 if __name__ == '__main__':
