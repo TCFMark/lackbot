@@ -6,109 +6,32 @@ Copyright Mark Hearn
 
 import re, os, twitter
 
+# Do all the boring credentials stuff
+CONSUMER_CREDENTIALS = os.path.expanduser('~/.phenny/consumercredentials')
+if not os.path.exists(CONSUMER_CREDENTIALS):
+   print 'Please create a file at ' + CONSUMER_CREDENTIALS
+   print 'First line of the file should be the app\'s Twitter API key'
+   print 'Second line of the file should be the app\'s Twitter API secret'
+   quit()
+
+consumer_token, consumer_secret = twitter.read_token_file(CONSUMER_CREDENTIALS)
+
 TWITTER_CREDENTIALS = os.path.expanduser('~/.phenny/twittercredentials')
 if not os.path.exists(TWITTER_CREDENTIALS):
-   twitter.oauth_dance("Lackbot", CONSUMER_KEY, CONSUMER_SECRET,
-                TWITTER_CREDENTIALS)
+   twitter.oauth_dance("Lackbot", 
+                       consumer_token, 
+                       consumer_secret,
+                       TWITTER_CREDENTIALS)
 
 oauth_token, oauth_secret = twitter.read_token_file(TWITTER_CREDENTIALS)
 
-t = Twitter(auth=OAuth(
-    oauth_token, oauth_secret, CONSUMER_KEY, CONSUMER_SECRET))
+t = twitter.Twitter(auth=twitter.OAuth(oauth_token, oauth_secret, consumer_token, consumer_secret))
 
-
-
-"""
-twitter.py - Phenny Twitter Module
-Copyright 2012, Sean B. Palmer, inamidst.com
-Licensed under the Eiffel Forum License 2.
-
-http://inamidst.com/phenny/
-
-import re, time
-import web
-
-r_username = re.compile(r'^[a-zA-Z0-9_]{1,15}$')
-r_link = re.compile(r'^https?://twitter.com/\S+$')
-r_p = re.compile(r'(?ims)(<p class="js-tweet-text.*?</p>)')
-r_tag = re.compile(r'(?ims)<[^>]+>')
-r_anchor = re.compile(r'(?ims)(<a.*?</a>)')
-r_expanded = re.compile(r'(?ims)data-expanded-url=["\'](.*?)["\']')
-r_whiteline = re.compile(r'(?ims)[ \t]+[\r\n]+')
-r_breaks = re.compile(r'(?ims)[\r\n]+')
-
-def entity(*args, **kargs):
-   return web.entity(*args, **kargs).encode('utf-8')
-
-def decode(html): 
-   return web.r_entity.sub(entity, html)
-
-def expand(tweet):
-   def replacement(match):
-      anchor = match.group(1)
-      for link in r_expanded.findall(anchor):
-         return link
-      return r_tag.sub('', anchor)
-   return r_anchor.sub(replacement, tweet)
-
-def read_tweet(url):
-   bytes = web.get(url)
-   shim = '<div class="content clearfix">'
-   if shim in bytes:
-      bytes = bytes.split(shim, 1).pop()
-
-   for text in r_p.findall(bytes):
-      text = expand(text)
-      text = r_tag.sub('', text)
-      text = text.strip()
-      text = r_whiteline.sub(' ', text)
-      text = r_breaks.sub(' ', text)
-      return decode(text)
-   return "Sorry, couldn't get a tweet from %s" % url
-
-def format(tweet, username):
-   return '%s (@%s)' % (tweet, username)
-
-def user_tweet(username):
-   tweet = read_tweet('https://twitter.com/' + username + "?" + str(time.time()))
-   return format(tweet, username)
-
-def id_tweet(tid):
-   link = 'https://twitter.com/twitter/status/' + tid
-   data = web.head(link)
-   message, status = tuple(data)
-   if status == 301:
-      url = message.get("Location")
-      if not url: return "Sorry, couldn't get a tweet from %s" % link
-      username = url.split('/')[3]
-      tweet = read_tweet(url)
-      return format(tweet, username)
-   return "Sorry, couldn't get a tweet from %s" % link
-
-def twitter(phenny, input):
-   arg = input.group(2)
-   if not arg:
-      return phenny.reply("Give me a link, a username, or a tweet id")
-
-   arg = arg.strip()
-   if isinstance(arg, unicode):
-      arg = arg.encode('utf-8')
-
-   if arg.isdigit():
-      phenny.say(id_tweet(arg))
-   elif r_username.match(arg):
-      phenny.say(user_tweet(arg))
-   elif r_link.match(arg):
-      username = arg.split('/')[3]
-      tweet = read_tweet(arg)
-      phenny.say(format(tweet, username))
-   else: phenny.reply("Give me a link, a username, or a tweet id")
-"""
-
-'''
-twitter.commands = ['tw', 'twitter']
-twitter.thread = True
-'''
+def readtweet(phenny, input):
+   response = t.statuses.user_timeline(screen_name=input.group(2))
+   phenny.say(response)
+readtweet.commands = ['tw', 'twitter']
+readtweet.thread = True
 
 if __name__ == '__main__':
    print __doc__
