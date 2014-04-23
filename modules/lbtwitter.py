@@ -1,11 +1,29 @@
 #!/usr/bin/env python
+'''
+twitter.py - Improved Phenny Twitter Module
+Copyright Mark Hearn
+'''
+
+import re, os, twitter
+
+TWITTER_CREDENTIALS = os.path.expanduser('~/.phenny/twittercredentials')
+if not os.path.exists(TWITTER_CREDENTIALS):
+   twitter.oauth_dance("Lackbot", CONSUMER_KEY, CONSUMER_SECRET,
+                TWITTER_CREDENTIALS)
+
+oauth_token, oauth_secret = twitter.read_token_file(TWITTER_CREDENTIALS)
+
+t = Twitter(auth=OAuth(
+    oauth_token, oauth_secret, CONSUMER_KEY, CONSUMER_SECRET))
+
+
+
 """
 twitter.py - Phenny Twitter Module
 Copyright 2012, Sean B. Palmer, inamidst.com
 Licensed under the Eiffel Forum License 2.
 
 http://inamidst.com/phenny/
-"""
 
 import re, time
 import web
@@ -85,9 +103,12 @@ def twitter(phenny, input):
       tweet = read_tweet(arg)
       phenny.say(format(tweet, username))
    else: phenny.reply("Give me a link, a username, or a tweet id")
+"""
 
+'''
 twitter.commands = ['tw', 'twitter']
 twitter.thread = True
+'''
 
 if __name__ == '__main__':
    print __doc__
