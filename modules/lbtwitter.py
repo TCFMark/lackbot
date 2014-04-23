@@ -29,19 +29,61 @@ def firstTimeAuth():
    twat = twitter.Twitter(auth=twitter.OAuth(oauth_token, oauth_secret, consumer_token, consumer_secret))
    return twat
 
-def readtweet(phenny, input):
+def twitterAuth():
    if 'twat' not in globals():
       global twat
       twat = firstTimeAuth()
+
+def readTweet(phenny, input):
+   twitterAuth()
    response = twat.statuses.user_timeline(screen_name=input.group(2))
    
    try: 
       phenny.say(response[0]['text'] + ' (@' + response[0]['user']['screen_name'] + ')')
    except IndexError:
       phenny.say("No tweets found")
+readTweet.commands = ['tw']
+readTweet.thread = True
+      
+def getRandomTweet():
+   from ping import getWordList
+   twitterAuth()
    
-readtweet.commands = ['tw']
-readtweet.thread = True
+   for i in range(0,2):
+      try:
+         response = twat.search.tweets(q='%s' % getWordList(1)[0])
+         return response['statuses'][0]
+      except IndexError:
+         pass   
+      
+   return None
+
+def randomTweet(phenny, input):
+   tweet = getRandomTweet()
+   
+   if tweet is None:
+      phenny.say('Sorry, I\'m rubbish at this')
+      quit()
+   
+   phenny.say(tweet['text'] + ' (@' + tweet['user']['screen_name'] + ')')
+randomTweet.commands = ['rtw']
+randomTweet.thread = True
+
+def mangleRandomTweet(phenny, input):
+   import tcfparty
+   
+   tweet = getRandomTweet()
+   
+   if tweet is None:
+      phenny.say('I \'m Sorry an error')
+      quit()
+   
+   text = tweet['text']
+   print text
+   text = tcfparty.tcfparty(text)
+   phenny.say(text)
+mangleRandomTweet.commands = ['mood']
+mangleRandomTweet.thread = True
 
 if __name__ == '__main__':
    print __doc__
