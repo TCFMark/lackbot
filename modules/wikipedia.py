@@ -10,6 +10,9 @@ http://inamidst.com/phenny/
 import re, urllib, gzip, StringIO
 import web, tcfparty
 
+# Horrible hack
+sentenceOnly = False
+
 wikiuri = 'http://%s.wikipedia.org/wiki/%s'
 # wikisearch = 'http://%s.wikipedia.org/wiki/Special:Search?' \
 #                     + 'search=%s&fulltext=Search'
@@ -205,7 +208,6 @@ rwik.commands = ['rwik']
 rwik.priority = 'high'
 
 def fact(phenny, input, firstAttempt=True):
-   global sentenceOnly
    sentenceOnly = True
    
    factoid = randomArticle()
