@@ -68,7 +68,7 @@ def nsfw(phenny, input):
 nsfw.rule = r'(?i).*?nsfw.*'
 
 def rediculous(phenny, input):
-   phenny.reply("R-I-D... ridiculous")
+   phenny.reply("*ridiculous")
 rediculous.rule = r'(?i).*?rediculous.*'
 
 def lol(phenny, input):
