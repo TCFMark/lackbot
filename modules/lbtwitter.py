@@ -79,7 +79,6 @@ def mangleRandomTweet(phenny, input):
       quit()
    
    text = tweet['text']
-   print text
    text = tcfparty.tcfparty(text)
    phenny.say(text)
 mangleRandomTweet.commands = ['mood']
