@@ -15,7 +15,7 @@ def chat(phenny, input):
       phenny.reply(lbtwitter.mangleRandomTweet())
    elif selector <= 3:
       import wikipedia
-      wikipedia.fact(phenny, input)
+      phenny.reply(wikipedia.getFact())
    else:
       import tcfparty
       phenny.reply(tcfparty.tcfparty(phrase))
