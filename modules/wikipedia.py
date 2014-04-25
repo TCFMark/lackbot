@@ -206,22 +206,26 @@ def rwik(phenny, input):
 rwik.commands = ['rwik']
 rwik.priority = 'high'
 
-def fact(phenny, input, firstAttempt=True):
+def getFact(firstAttempt=True):
    global sentenceOnly
    sentenceOnly = True
    
    factoid = randomArticle()
    try:
       factoid = tcfparty.tcfparty(factoid)
-      phenny.say('Fact! ' + factoid)
+      return factoid
    except UnicodeDecodeError:
       if firstAttempt is True:
-         fact(phenny, input, firstAttempt=False)
+         getFact(firstAttempt=False)
       else:
          import vincent
-         phenny.say(vincent.question(factoid))
+         return vincent.question(factoid)
 
    sentenceOnly = False
+
+def fact(phenny, input)
+   factoid = getFact()
+   phenny.say(factoid)
 fact.commands = ['fact']
 fact.priority = 'high'
 
