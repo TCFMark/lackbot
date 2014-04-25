@@ -223,7 +223,7 @@ def getFact(firstAttempt=True):
 
    sentenceOnly = False
 
-def fact(phenny, input)
+def fact(phenny, input):
    factoid = getFact()
    phenny.say(factoid)
 fact.commands = ['fact']
