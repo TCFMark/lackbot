@@ -225,7 +225,7 @@ def getFact(firstAttempt=True):
 
 def fact(phenny, input):
    factoid = getFact()
-   phenny.say(factoid)
+   phenny.say("Fact! " + factoid)
 fact.commands = ['fact']
 fact.priority = 'high'
 
