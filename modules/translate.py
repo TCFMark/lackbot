@@ -117,6 +117,10 @@ def tr2(phenny, input):
 tr2.commands = ['tr']
 tr2.priority = 'low'
 
+def mangleCommand(phenny, input):
+   phenny.say(mangle(input.group(2)))
+mangleCommand.commands = ['mangle']
+
 def mangle(tring): 
    import time
    loglist = []
@@ -162,10 +166,6 @@ def mangle(tring):
    phrase = phrase.replace(' ,', ',').replace(' .', '.')
    phrase = phrase.strip(' ,')
    return phrase
-   
-def mangleCommand(phenny, input):
-   phenny.say(mangle(input.group(2)))
-mangleCommand.commands = ['mangle']
 
 if __name__ == '__main__': 
    print __doc__.strip()
