@@ -117,7 +117,7 @@ def tr2(phenny, input):
 tr2.commands = ['tr']
 tr2.priority = 'low'
 
-def mangle(tring): 
+def mangle(phenny, input): 
    import time
    loglist = []
    
