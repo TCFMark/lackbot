@@ -215,11 +215,7 @@ def getFact(firstAttempt=True):
       factoid = tcfparty.tcfparty(factoid)
       return factoid
    except UnicodeDecodeError:
-      if firstAttempt is True:
-         getFact(firstAttempt=False)
-      else:
-         import vincent
-         return vincent.question(factoid)
+      return "I dun' know nuffink."
 
    sentenceOnly = False
 

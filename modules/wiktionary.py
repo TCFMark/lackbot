@@ -71,14 +71,12 @@ def format(word, definitions, number=2):
          result += ', '.join(n)
    return result.strip(' .,')
 
-def w(phenny, input): 
-   if not input.group(2):
-      return phenny.reply("Nothing to define.")
-   word = input.group(2)
+def wwrapper(word):
+   if not word:
+      return "Nothing to define."
    etymology, definitions = wiktionary(word)
    if not definitions: 
-      phenny.say("Couldn't get any definitions for %s." % word)
-      return
+      return "Couldn't get any definitions for " + word
 
    result = format(word, definitions)
    if len(result) < 150: 
@@ -88,7 +86,10 @@ def w(phenny, input):
 
    if len(result) > 300: 
       result = result[:295] + '[...]'
-   phenny.say(result)
+   return result
+
+def w(phenny, input): 
+   phenny.say(wwrapper(input.group(2)))
 w.commands = ['w']
 w.example = '.w bailiwick'
 
