@@ -6,6 +6,9 @@ Copyright Mark Hearn
 
 import re, os, twitter
 
+r_username = re.compile(r'^[a-zA-Z0-9_]{1,15}$')
+r_link = re.compile(r'^https?://twitter.com/\S+$')
+
 # Do all the boring credentials stuff
 CONSUMER_CREDENTIALS = os.path.expanduser('~/.phenny/consumercredentials')
 if not os.path.exists(CONSUMER_CREDENTIALS):
@@ -34,14 +37,45 @@ def twitterAuth():
       global twat
       twat = firstTimeAuth()
 
-def readTweet(phenny, input):
+def readUserLatestTweet(username):
    twitterAuth()
-   response = twat.statuses.user_timeline(screen_name=input.group(2))
+   response = twat.statuses.user_timeline(screen_name=username)
    
    try: 
-      phenny.say(response[0]['text'] + ' (@' + response[0]['user']['screen_name'] + ')')
+      return response[0]['text'] + ' (@' + response[0]['user']['screen_name'] + ')'
    except IndexError:
-      phenny.say("No tweets found")
+      return "No tweets found"
+   
+def readIDTweet(id):
+   twitterAuth()
+   response = twat.statuses.show(_id=id)
+   
+   try:
+      return response['text'] + ' (@' + response['user']['screen_name'] + ')'
+   except IndexError:
+      return "Tweet not found"
+      
+def readTweet(phenny, input):
+   arg = input.group(2)
+   if not arg:
+      return phenny.reply("Give me a link, a username, or a tweet id")
+   
+   arg = arg.strip()
+   if isinstance(arg, unicode):
+      arg = arg.encode('utf-8')
+
+   try:
+      if arg.isdigit():
+         phenny.say(readIDTweet(arg))
+      elif r_username.match(arg):
+         phenny.say(readUserLatestTweet(arg))
+      elif r_link.match(arg):
+         tweetID = arg.split('/')[5]
+         phenny.say(readIDTweet(tweetID))
+      else: phenny.reply("Give me a link, a username, or a tweet id")  
+   except:
+      phenny.reply("Give me a link, a username, or a tweet id")  
+   
 readTweet.commands = ['tw']
 readTweet.thread = True
       
