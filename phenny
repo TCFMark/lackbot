@@ -48,8 +48,9 @@ def create_default_config(fn):
    # e.g. /path/to/my/modules
    extra = []
    
-   # Directory to record logs to
+   # Directory to record logs to, and the logging level (defaults to WARNING)
    logdir = '/var/log/lackbot'
+   loglevel = 'WARNING'
 
    # Services to load: maps channel names to white or black lists
    external = { 
