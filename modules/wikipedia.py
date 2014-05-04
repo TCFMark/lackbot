@@ -181,6 +181,8 @@ def wikwrapper(origterm):
       return 'Can\'t find anything in Wikipedia for "%s".' % origterm
 
 def wik(phenny, input):
+   global sentenceOnly
+   sentenceOnly = False
    phenny.say(wikwrapper(input.group(2)))
 wik.commands = ['wik']
 wik.priority = 'high'
@@ -197,7 +199,7 @@ def randomArticle():
          atts = page.attrib
          return wikwrapper(atts['title'])
    except URLError, e:
-      return "No response from shitty Wikipedia APIs, sorry."
+      return "No response from Wikipedia, sorry."
 
 def rwik(phenny, input):
    global sentenceOnly
