@@ -72,7 +72,7 @@ def initLogger(config):
    if not os.path.exists(config.logdir):
       os.makedirs(config.logdir)
    
-   logging.basicConfig(filename=config.logdir + '/log.txt', level=logging.DEBUG, format='%(asctime)s %(message)s')
+   logging.basicConfig(filename=config.logdir + '/log.txt', level=logging.WARNING, format='%(asctime)s %(message)s')
 
 if __name__ == '__main__': 
    print __doc__
