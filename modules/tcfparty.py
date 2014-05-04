@@ -11,7 +11,7 @@ def tcfparty(en1):
 	en1 = en1.encode('utf-8')
 	input = en1
 	
-	logging.debug('Starting a TCFParty!')
+	logging.debug(__name__ + ': Starting a TCFParty!')
 
 	for x in range(0, 32):
 		# Translate to Japanese
