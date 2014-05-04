@@ -8,7 +8,7 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
-import re
+import re, logging
 import web, HTMLParser
 
 r_result = re.compile(r'(?i)<A NAME=results>(.*?)</A>')
@@ -28,10 +28,12 @@ subs = [
 ]
 
 def calc(phenny, input): 
-   """Use the Frink online calculator."""
+   """Use the Frink online calculator."""   
    q = input.group(2)
-   if not q: 
+   if not q:
       return phenny.say('0?')
+   
+   logging.debug(__name__ + ': Using Frink calculator (.calc) to calculate ' + input.group(2))
 
    query = q[:]
    for a, b in subs: 
@@ -61,8 +63,11 @@ def calc(phenny, input):
       elif ' in ' in q: 
          result += ' ' + q.split(' in ', 1)[1]
 
+      logging.debug(__name__ + ': .calc returned ' + result[:350])
       phenny.say(q + ' = ' + result[:350])
-   else: phenny.reply("Sorry, can't calculate that.")
+   else:
+      logging.debug(__name__ + ': .calc failed') 
+      phenny.reply("Sorry, can't calculate that.")
    phenny.say('Note that .calc is deprecated, consider using .c')
 calc.commands = ['calc']
 calc.example = '.calc 5 + 3'
@@ -72,6 +77,7 @@ def c(phenny, input):
    if not input.group(2):
       return phenny.reply("Nothing to calculate.")
    q = input.group(2).encode('utf-8')
+   logging.debug(__name__ + ': Using Google calculator (.c) to calculate: ' + q)
    q = q.replace('\xcf\x95', 'phi') # utf-8 U+03D5
    q = q.replace('\xcf\x80', 'pi') # utf-8 U+03C0
    uri = 'http://www.google.com/ig/calculator?q='
@@ -86,32 +92,43 @@ def c(phenny, input):
       answer = answer.replace('<sup>', '^(')
       answer = answer.replace('</sup>', ')')
       answer = web.decode(answer)
+      logging.debug(__name__ + ': .c returned ' + answer)
       phenny.say(answer)
-   else: phenny.say('Sorry, no result.')
+   else: 
+      logging.debug(__name__ + ': .c returned no result')
+      phenny.say('Sorry, no result.')
 c.commands = ['c']
 c.example = '.c 5 + 3'
 
 def py(phenny, input): 
    query = input.group(2).encode('utf-8')
+   logging.debug(__name__ + ': Using Python service (.py) to run: ' + query)
    uri = 'http://tumbolia.appspot.com/py/'
    answer = web.get(uri + web.urllib.quote(query))
    if answer: 
+      logging.debug(__name__ + ': .py returned ' + answer)
       phenny.say(answer)
-   else: phenny.reply('Sorry, no result.')
+   else:
+      logging.debug(__name__ + ': .py returned no result') 
+      phenny.reply('Sorry, no result.')
 py.commands = ['py']
 
 def wa(phenny, input): 
    if not input.group(2):
       return phenny.reply("No search term.")
    query = input.group(2).encode('utf-8')
+   logging.debug(__name__ + ': Using Wolfram Alpha (.wa) to run: ' + query)
    uri = 'http://tumbolia.appspot.com/wa/'
    answer = web.get(uri + web.urllib.quote(query.replace('+', '%2B')))
    if answer: 
       answer = HTMLParser.HTMLParser().unescape(answer)
       answer = answer.replace('->', ': ')
       answer = answer.replace(';', ' | ')
+      logging.debug(__name__ + ': .wa returned ' + answer)
       phenny.say(answer)
-   else: phenny.reply('Sorry, no result.')
+   else: 
+      logging.debug(__name__ + ': .wa returned no result') 
+      phenny.reply('Sorry, no result.')
 wa.commands = ['wa']
 
 if __name__ == '__main__': 
