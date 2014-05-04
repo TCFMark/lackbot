@@ -72,13 +72,12 @@ def initLogger(config):
    if not os.path.exists(config.logdir):
       os.makedirs(config.logdir)
    
-   if not hasattr(config, 'loglevel'):
-      loglevel = 'WARNING'
-   else:
-      loglevel = config.loglevel
+   #if not hasattr(config, 'loglevel'):
+   #   loglevel = 'WARNING'
+   #else:
+   #   loglevel = config.loglevel
    
-   logging.basicConfig(filename=config.logdir + '/log.txt', format='%(asctime)s %(message)s')
-   logging.Logger.setLevel(log, loglevel)
+   logging.basicConfig(filename=config.logdir + '/log.txt', level=logging.DEBUG, format='%(asctime)s %(message)s')
 
 if __name__ == '__main__': 
    print __doc__
