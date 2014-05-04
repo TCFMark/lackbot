@@ -8,7 +8,7 @@ http://inamidst.com/phenny/
 """
 
 import sys, os, time, threading, signal
-import bot
+import bot, logging
 
 class Watcher(object): 
    # Cf. http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/496735
@@ -39,6 +39,8 @@ def run_phenny(config):
    try: Watcher()
    except Exception, e: 
       print >> sys.stderr, 'Warning:', e, '(in __init__.py)'
+   
+   initLogger(config)
 
    while True: 
       try: connect(config)
@@ -51,12 +53,26 @@ def run_phenny(config):
       warning = 'Warning: Disconnected. Reconnecting in %s seconds...' % delay
       print >> sys.stderr, warning
       time.sleep(delay)
+      
+      logging.warning('test')
 
 def run(config): 
    t = threading.Thread(target=run_phenny, args=(config,))
    if hasattr(t, 'run'): 
       t.run()
    else: t.start()
+   
+def initLogger(config):
+   if not hasattr(config, 'logdir'):
+      print >> sys.stderr, 'No logdir set in config. Logging will not run.'
+      quit()
+   else:
+      log = logging.getLogger(__name__)
+      
+   if not os.path.exists(config.logdir):
+      os.makedirs(config.logdir)
+   
+   logging.basicConfig(filename=config.logdir + '/log.txt', level=logging.DEBUG, format='%(asctime)s %(message)s')
 
 if __name__ == '__main__': 
    print __doc__

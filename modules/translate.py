@@ -8,9 +8,6 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
-# Commented out due to issue #5
-#logdir = "logs/translate/"
-
 import re, urllib
 import web
 import random
@@ -155,13 +152,6 @@ def mangle(tring):
          phrase = backup[:]
          break
       time.sleep(0.25)
-
-# Commented out due to issue #5
-#   logfile = open(logdir + "mangle-" + time.strftime("%Y%m%d") + ".txt", "a+")
-#   for line in loglist:
-#      logfile.write(line + "\n")
-#   logfile.write("--------\n")
-#   logfile.close()
 
    phrase = phrase.replace(' ,', ',').replace(' .', '.')
    phrase = phrase.strip(' ,')

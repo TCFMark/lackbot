@@ -47,6 +47,9 @@ def create_default_config(fn):
    # Directories to load user modules from
    # e.g. /path/to/my/modules
    extra = []
+   
+   # Directory to record logs to
+   logdir = '/var/log/lackbot'
 
    # Services to load: maps channel names to white or black lists
    external = { 
