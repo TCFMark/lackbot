@@ -34,6 +34,12 @@ def tcfparty(en1):
 			break
 		en2 = en2.encode('utf-8')
 
+		# Stops returning nonsense if the encoding falls over (see issue #29)
+		if ('ã' in en2) or ('â' in en2):
+			logging.debug(__name__ + ': encoding nonsense encountered, ending party.')
+			en2 = en1
+			break
+
 		if en1 == en2:
 			break
 		if en2 == en0:
