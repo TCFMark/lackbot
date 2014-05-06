@@ -223,7 +223,7 @@ def getFact(firstAttempt=True):
       factoid = tcfparty.tcfparty(factoid)
       return factoid
    except UnicodeDecodeError:
-      logging.debug(__name__ + 'getFact failed, lackbot dun\' know nuffink')
+      logging.debug(__name__ + ': getFact failed, lackbot dun\' know nuffink')
       return "I dun' know nuffink."
 
    sentenceOnly = False
