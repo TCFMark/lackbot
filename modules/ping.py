@@ -106,7 +106,7 @@ if __name__ == '__main__':
    print __doc__.strip()
 
 def gross(phenny, input):
-    response = random.choice['icky', 'yuck', 'gross', 'filfy', 'beastly']
+    response = random.choice(['icky', 'yuck', 'gross', 'filfy', 'beastly'])
     phenny.say(response)
 gross.rule = r'(?i).*?gross.*'
 
