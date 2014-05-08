@@ -77,7 +77,7 @@ def initLogger(config):
    #else:
    #   loglevel = config.loglevel
    
-   logging.basicConfig(filename=config.logdir + '/log.txt', level=logging.DEBUG, format='%(asctime)s %(message)s')
+   logging.basicConfig(filename=config.logdir + '/log.txt', level=logging.DEBUG, format='%(asctime)s %(filename)s: %(levelname)s %(message)s')
 
 if __name__ == '__main__': 
    print __doc__

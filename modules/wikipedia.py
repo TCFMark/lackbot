@@ -183,9 +183,9 @@ def wikwrapper(origterm):
 def wik(phenny, input):
    global sentenceOnly
    sentenceOnly = False
-   logging.debug(__name__ + ': Getting Wikipedia article for ' + input.group(2))
+   logging.debug('Getting Wikipedia article for ' + input.group(2))
    result = wikwrapper(input.group(2)).decode('utf-8')
-   logging.debug(__name__ + ': ' + input.group(2) + ' returned ' + result)
+   logging.debug('"' + input.group(2) + '" returned ' + result)
    phenny.say(result)
 wik.commands = ['wik']
 wik.priority = 'high'
@@ -207,9 +207,9 @@ def randomArticle():
 def rwik(phenny, input):
    global sentenceOnly
    sentenceOnly = False
-   logging.debug(__name__ + ': .rwik called, getting random article')
+   logging.debug('.rwik called, getting random article')
    result = randomArticle()
-   logging.debug(__name__ + ': .rwik returned ' + result)
+   logging.debug('.rwik returned ' + result)
    phenny.say(result)
 rwik.commands = ['rwik']
 rwik.priority = 'high'
@@ -223,13 +223,13 @@ def getFact(firstAttempt=True):
       factoid = tcfparty.tcfparty(factoid)
       return factoid
    except UnicodeDecodeError:
-      logging.debug(__name__ + ': getFact failed, lackbot dun\' know nuffink')
+      logging.debug('getFact failed, lackbot dun\' know nuffink')
       return "I dun' know nuffink."
 
    sentenceOnly = False
 
 def fact(phenny, input):
-   logging.debug(__name__ + ': .fact called, getting "fact"')
+   logging.debug('.fact called, getting "fact"')
    factoid = getFact()
    phenny.say("Fact! " + factoid)
 fact.commands = ['fact']

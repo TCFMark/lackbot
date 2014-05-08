@@ -14,7 +14,7 @@ def join(phenny, input):
    # Can only be done in privmsg by an admin
    if input.sender.startswith('#'): return
    if input.admin: 
-      logging.debug(__name__ + ': Joining ' + input.group(1))
+      logging.debug('Joining ' + input.group(1))
       channel, key = input.group(1), input.group(2)
       if not key: 
          phenny.write(['JOIN'], channel)
@@ -28,7 +28,7 @@ def part(phenny, input):
    # Can only be done in privmsg by an admin
    if input.sender.startswith('#'): return
    if input.admin: 
-      logging.debug(__name__ + ': Parting ' + input.group(2))
+      logging.debug('Parting ' + input.group(2))
       phenny.write(['PART'], input.group(2))
 part.commands = ['part']
 part.priority = 'low'
@@ -39,7 +39,7 @@ def quit(phenny, input):
    # Can only be done in privmsg by the owner
    if input.sender.startswith('#'): return
    if input.owner: 
-      logging.debug(__name__ + ': Quitting')
+      logging.debug('Quitting')
       phenny.write(['QUIT'])
       __import__('os')._exit(0)
 quit.commands = ['quit']
@@ -51,7 +51,7 @@ def msg(phenny, input):
    a, b = input.group(2), input.group(3)
    if (not a) or (not b): return
    if input.admin: 
-      logging.debug(__name__ + ': Messaging ' + a + ' with: ' + b)
+      logging.debug('Messaging ' + a + ' with: ' + b)
       phenny.msg(a, b)
 msg.rule = (['msg'], r'(#?\S+) (.+)')
 msg.priority = 'low'
@@ -61,7 +61,7 @@ def me(phenny, input):
    if input.sender.startswith('#'): return
    if input.admin: 
       msg = '\x01ACTION %s\x01' % input.group(3)
-      logging.debug(__name__ + ': ' + msg)
+      logging.debug(msg)
       phenny.msg(input.group(2) or input.sender, msg)
 me.rule = (['me'], r'(#?\S+) (.+)')
 me.priority = 'low'

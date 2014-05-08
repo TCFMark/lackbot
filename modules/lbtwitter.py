@@ -29,7 +29,7 @@ if not os.path.exists(TWITTER_CREDENTIALS):
 oauth_token, oauth_secret = twitter.read_token_file(TWITTER_CREDENTIALS)
 
 def firstTimeAuth():
-   logging.debug(__name__ + ': Performing first time Twitter authentication')
+   logging.debug('Performing first time Twitter authentication')
    twat = twitter.Twitter(auth=twitter.OAuth(oauth_token, oauth_secret, consumer_token, consumer_secret))
    return twat
 
@@ -43,10 +43,10 @@ def readUserLatestTweet(username):
    response = twat.statuses.user_timeline(screen_name=username)
    
    try: 
-      logging.debug(__name__ + ': Reading ' + username + '\'s latest tweet')
+      logging.debug('Reading ' + username + '\'s latest tweet')
       return response[0]['text'] + ' (@' + response[0]['user']['screen_name'] + ')'
    except IndexError:
-      logging.debug(__name__ + ': No tweets found for ' + username)
+      logging.debug('No tweets found for ' + username)
       return "No tweets found"
    
 def readIDTweet(id):
@@ -54,10 +54,10 @@ def readIDTweet(id):
    response = twat.statuses.show(_id=id)
    
    try:
-      logging.debug(__name__ + ': Reading tweet with ID ' + id)
+      logging.debug('Reading tweet with ID ' + id)
       return response['text'] + ' (@' + response['user']['screen_name'] + ')'
    except IndexError:
-      logging.debug(__name__ + ': No tweet found with ID ' + id)
+      logging.debug('No tweet found with ID ' + id)
       return "Tweet not found"
       
 def readTweet(phenny, input):
@@ -71,13 +71,13 @@ def readTweet(phenny, input):
 
    try:
       if arg.isdigit():
-         logging.debug(__name__ + ': .tw called with ID')
+         logging.debug('.tw called with ID')
          phenny.say(readIDTweet(arg))
       elif r_username.match(arg):
-         logging.debug(__name__ + ': .tw called with username')
+         logging.debug('.tw called with username')
          phenny.say(readUserLatestTweet(arg))
       elif r_link.match(arg):
-         logging.debug(__name__ + ': .tw called with URL')
+         logging.debug('.tw called with URL')
          tweetID = arg.split('/')[5]
          phenny.say(readIDTweet(tweetID))
       else: phenny.reply("Give me a link, a username, or a tweet id")  
@@ -94,7 +94,7 @@ def getRandomTweet():
    for i in range(0,2):
       try:
          response = twat.search.tweets(q='%s' % getWordList(1)[0])
-         logging.debug(__name__ + ': Returning random tweet')
+         logging.debug('Returning random tweet')
          return response['statuses'][0]
       except IndexError:
          pass   
@@ -105,12 +105,12 @@ def randomTweet(phenny, input):
    tweet = getRandomTweet()
    
    if tweet is None:
-      logging.debug(__name__ + ': .rtw called, but no tweet found')
+      logging.debug('.rtw called, but no tweet found')
       phenny.say('Sorry, I\'m rubbish at this')
       quit()
    
    output = tweet['text'] + ' (@' + tweet['user']['screen_name'] + ')'
-   logging.debug(__name__ + ': .rtw called, saying tweet: ' + output)
+   logging.debug('.rtw called, saying tweet: ' + output)
    phenny.say(output)
 randomTweet.commands = ['rtw']
 randomTweet.thread = True
@@ -129,7 +129,7 @@ def mangleRandomTweet():
    return text
 
 def mood(phenny, input):
-   logging.debug(__name__ + ': .mood called, mangling a random tweet')
+   logging.debug('.mood called, mangling a random tweet')
    phenny.say(mangleRandomTweet())
 mood.commands = ['mood']
 mood.thread = True
