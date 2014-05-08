@@ -121,7 +121,7 @@ def mangleRandomTweet():
    tweet = getRandomTweet()
    
    if tweet is None:
-      phenny.say('I \'m Sorry an error')
+      return 'I \'m Sorry an error'
       quit()
    
    text = tweet['text']
