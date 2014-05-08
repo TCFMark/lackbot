@@ -17,8 +17,8 @@ def tcfparty(en1):
 		# Translate to Japanese
 		en1 = limitLen(en1, 400)
 		try:
-			logging.debug('en to ja: ' + en1)
-			ja, _lang = translate.translate(en1, 'en', 'ja')
+			logging.debug('auto to ja: ' + en1)
+			ja, _lang = translate.translate(en1, 'auto', 'ja')
 		except ValueError:
 			logging.debug('ValueError means the party\'s over.')
 			break
