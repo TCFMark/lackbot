@@ -125,6 +125,8 @@ def mangleRandomTweet():
       quit()
    
    text = tweet['text']
+   text = text.replace('@', '')
+   text = text.replace('#', '')
    text = tcfparty.tcfparty(text)
    return text
 
