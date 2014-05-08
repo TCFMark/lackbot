@@ -122,7 +122,7 @@ def mangleRandomTweet():
    
    if tweet is None:
       logging.warn('No tweets found.')
-      return 'I \'m Sorry an error'
+      return 'I\'m sorry, I didn\'t find any tweets.'
       quit()
    
    text = tweet['text']
