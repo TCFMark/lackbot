@@ -76,7 +76,7 @@ def nsfw(phenny, input):
 nsfw.rule = r'(?i).*?nsfw.*'
 
 def rediculous(phenny, input):
-   logging.debug(input.nick + 'said rediculous :(')
+   logging.debug(input.nick + ' said rediculous :(')
    phenny.reply("*ridiculous")
 rediculous.rule = r'(?i).*?rediculous.*'
 
