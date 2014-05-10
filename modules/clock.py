@@ -7,7 +7,7 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
-import re, math, time, urllib, locale, socket, struct, datetime
+import re, math, time, urllib, locale, socket, struct, datetime, logging
 from decimal import Decimal as dec
 from tools import deprecated
 
@@ -197,6 +197,8 @@ r_local = re.compile(r'\([a-z]+_[A-Z]+\)')
 def f_time(self, origin, match, args): 
    """Returns the current time."""
    tz = match.group(2) or 'GMT'
+   
+   logging.debug('.t called, getting the time for ' + tz)
 
    # Personal time zones, because they're rad
    if hasattr(self.config, 'timezones'): 
@@ -249,6 +251,7 @@ f_time.example = '.t UTC'
 
 def beats(phenny, input): 
    """Shows the internet time in Swatch beats."""
+   logging.debug('.beats called, getting the time in Swatch beats')
    beats = ((time.time() + 3600) % 86400) / 86.4
    beats = int(math.floor(beats))
    phenny.say('@%03i' % beats)
@@ -260,6 +263,7 @@ def divide(input, by):
 
 def yi(phenny, input): 
    """Shows whether it is currently yi or not."""
+   logging.debug('.yi called, determining whether it is currently yi, whatever that is')
    quadraels, remainder = divide(int(time.time()), 1753200)
    raels = quadraels * 4
    extraraels, remainder = divide(remainder, 432000)
@@ -271,6 +275,7 @@ yi.priority = 'low'
 
 def tock(phenny, input): 
    """Shows the time from the USNO's atomic clock."""
+   logging.debug('.tock called, getting the time from the USNO\'s atomic clock')
    u = urllib.urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl')
    info = u.info()
    u.close()
@@ -280,6 +285,7 @@ tock.priority = 'high'
 
 def npl(phenny, input): 
    """Shows the time from NPL's SNTP server."""
+   logging.debug('.npl called, getting the time from the NPL\'s SNTP server')
    # for server in ('ntp1.npl.co.uk', 'ntp2.npl.co.uk'): 
    client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
    client.sendto('\x1b' + 47 * '\0', ('ntp1.npl.co.uk', 123))
