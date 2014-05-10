@@ -7,7 +7,7 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
-import re, unicodedata
+import re, unicodedata, logging
 from itertools import islice
 
 def about(u, cp=None, name=None): 
@@ -67,12 +67,15 @@ def codepoint_extended(arg):
 def u(phenny, input): 
    """Look up unicode information."""
    arg = input.bytes[3:]
+   
    # phenny.msg('#inamidst', '%r' % arg)
    if not arg: 
       return phenny.reply('You gave me zero length input.')
    elif not arg.strip(' '): 
       if len(arg) > 1: return phenny.reply('%s SPACEs (U+0020)' % len(arg))
       return phenny.reply('1 SPACE (U+0020)')
+   
+   logging.debug('Looking up unicode information for ' + arg)
 
    # @@ space
    if set(arg.upper()) - set(
