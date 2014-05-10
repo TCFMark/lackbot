@@ -24,7 +24,7 @@ doc.priority = 'low'
 
 def commands(phenny, input): 
    # This function only works in private message
-   logging.debug('Returning list of commands for ' + input.sender)
+   logging.debug('Returning list of commands for ' + input.nick)
    
    if input.sender.startswith('#'): return
    names = ', '.join(sorted(phenny.doc.iterkeys()))
