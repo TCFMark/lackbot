@@ -89,6 +89,8 @@ def etymology(word):
 @deprecated
 def f_etymology(self, origin, match, args): 
    word = match.group(2)
+   
+   logging.debug('Getting etymology for ' + word)
 
    try: result = etymology(word.encode('iso-8859-1'))
    except IOError: 
@@ -99,8 +101,10 @@ def f_etymology(self, origin, match, args):
       result = None
 
    if result is not None: 
+      logging.debug('Etyomology found: ' + result)
       self.msg(origin.sender, result)
    else: 
+      logging.debug('Etymology for ' + word + ' not found')
       uri = etysearch % word
       msg = 'Can\'t find the etymology for "%s". Try %s' % (word, ('http://etymonline.com/index.php?term=%s' % web.urllib.quote(word)))
       self.msg(origin.sender, msg)
