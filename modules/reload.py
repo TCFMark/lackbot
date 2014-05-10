@@ -47,7 +47,7 @@ def f_reload(phenny, input):
    phenny.register(vars(module))
    phenny.bind_commands()
    
-   logging.info(module + ' reloaded')
+   logging.info(str(module) + ' reloaded')
    phenny.reply('%r (version: %s)' % (module, modified))
 f_reload.name = 'reload'
 f_reload.rule = ('$nick', ['reload'], r'(\S+)?')
