@@ -5,7 +5,7 @@ Author: Sean B. Palmer, inamidst.com
 About: http://inamidst.com/phenny/
 """
 
-import random
+import random, logging
 
 # getWordList is based on
 # https://mail.python.org/pipermail/tutor/2001-June/006301.html

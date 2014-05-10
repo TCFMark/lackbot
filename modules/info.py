@@ -7,6 +7,8 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
+import logging
+
 def doc(phenny, input): 
    """Shows a command's documentation, and possibly an example."""
    name = input.group(1)

@@ -2,7 +2,7 @@
 quip.py - Phenny patel pyquips module
 """
 
-import sys, pyquips, cgi, os
+import sys, pyquips, cgi, os, logging
 
 def quip(phenny, input):
    logging.debug('Adding quip: ' + input.group(2))

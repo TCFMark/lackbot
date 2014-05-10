@@ -7,7 +7,7 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
-import re, urllib, urllib2, httplib, urlparse, time
+import re, urllib, urllib2, httplib, urlparse, time, logging
 from htmlentitydefs import name2codepoint
 import web
 from tools import deprecated

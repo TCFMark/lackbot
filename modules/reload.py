@@ -7,7 +7,7 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
-import sys, os.path, time, imp
+import sys, os.path, time, imp, logging
 import irc
 
 def f_reload(phenny, input): 
