@@ -25,7 +25,8 @@ def getWordList(minwords):
       chars = f.read(minwords * 30)
       # split it on white space
       words = string.split(chars)
-   
+      
+   logging.debug('Random words required, returning ' + str(words))   
    return words
 
 def hello(phenny, input): 
