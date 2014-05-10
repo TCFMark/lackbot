@@ -11,6 +11,8 @@ def doc(phenny, input):
    """Shows a command's documentation, and possibly an example."""
    name = input.group(1)
    name = name.lower()
+   
+   logging.debug('Displaying help for ' + name)
 
    if phenny.doc.has_key(name): 
       phenny.reply(phenny.doc[name][0])
@@ -22,6 +24,8 @@ doc.priority = 'low'
 
 def commands(phenny, input): 
    # This function only works in private message
+   logging.debug('Returning list of commands for ' + input.sender)
+   
    if input.sender.startswith('#'): return
    names = ', '.join(sorted(phenny.doc.iterkeys()))
    phenny.say('Commands I recognise: ' + names + '.')
@@ -31,6 +35,8 @@ commands.commands = ['commands']
 commands.priority = 'low'
 
 def help(phenny, input): 
+   logging.debug('Displaying help message for ' + input.sender)
+   
    response = (
       'Hi, I\'m a bot. Say ".commands" to me in private for a list ' + 
       'of my commands, or see http://inamidst.com/phenny/ for more ' + 
@@ -42,6 +48,8 @@ help.priority = 'low'
 
 def stats(phenny, input): 
    """Show information on command usage patterns."""
+   logging.debug('Displaying stats for command usage patterns')
+   
    commands = {}
    users = {}
    channels = {}
