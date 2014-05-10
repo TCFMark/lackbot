@@ -12,7 +12,9 @@ import irc
 
 def f_reload(phenny, input): 
    """Reloads a module, for use by admins only.""" 
-   if not input.admin: return
+   if not input.admin: 
+      logging.warn(input.nick + ' tried reloading a module but isn\'t an admin. Naughty!')
+      return
 
    name = input.group(2)
    if name == phenny.config.owner: 
@@ -44,7 +46,8 @@ def f_reload(phenny, input):
 
    phenny.register(vars(module))
    phenny.bind_commands()
-
+   
+   logging.info(module + ' reloaded')
    phenny.reply('%r (version: %s)' % (module, modified))
 f_reload.name = 'reload'
 f_reload.rule = ('$nick', ['reload'], r'(\S+)?')
