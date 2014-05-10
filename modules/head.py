@@ -27,6 +27,8 @@ def head(phenny, input):
    if not uri.startswith('htt'): 
       uri = 'http://' + uri
    # uri = uri.replace('#!', '?_escaped_fragment_=')
+   
+   logging.debug('Getting header information for ' + uri)
 
    try: info = web.head(uri)
    except IOError: return phenny.say("Can't connect to %s" % uri)
@@ -82,6 +84,8 @@ def f_title(self, origin, match, args):
    if not ':' in uri: 
       uri = 'http://' + uri
    uri = uri.replace('#!', '?_escaped_fragment_=')
+   
+   logging.debug('Getting title for ' + uri)
 
    localhost = [
       'http://localhost/', 'http://localhost:80/', 
@@ -179,6 +183,7 @@ f_title.commands = ['title']
 
 def noteuri(phenny, input): 
    uri = input.group(1).encode('utf-8')
+   logging.debug('Found URI: ' + uri)
    if not hasattr(phenny.bot, 'last_seen_uri'): 
       phenny.bot.last_seen_uri = {}
    phenny.bot.last_seen_uri[input.sender] = uri
