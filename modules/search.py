@@ -7,7 +7,7 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
-import re
+import re, logging
 import web
 
 class Grab(web.urllib.URLopener):
@@ -61,9 +61,12 @@ def g(phenny, input):
    query = input.group(2)
    if not query: 
       return phenny.reply('.g what?')
+   logging.debug('Googling ' + query)
+   
    query = query.encode('utf-8')
    uri = google_search(query)
    if uri: 
+      logging.debug('Google found ' + uri)
       phenny.reply(uri)
       if not hasattr(phenny.bot, 'last_seen_uri'):
          phenny.bot.last_seen_uri = {}
@@ -95,6 +98,7 @@ def gcs(phenny, input):
    queries = r_query.findall(input.group(2))
    if len(queries) > 6: 
       return phenny.reply('Sorry, can only compare up to six things.')
+   logging.debug('Comparing number of results for the following: ' + input.group(2))
 
    results = []
    for i, query in enumerate(queries): 
@@ -107,6 +111,7 @@ def gcs(phenny, input):
 
    results = [(term, n) for (n, term) in reversed(sorted(results))]
    reply = ', '.join('%s (%s)' % (t, formatnumber(n)) for (t, n) in results)
+   logging.debug('Comparison of Google results returned: ' + reply)
    phenny.say(reply)
 gcs.commands = ['gcs', 'comp']
 
@@ -129,10 +134,12 @@ def bing(phenny, input):
    else: lang = 'en-GB'
    if not query:
       return phenny.reply('.bing what?')
+   logging.debug('Searching Bing for ' + query)
 
    query = query.encode('utf-8')
    uri = bing_search(query, lang)
    if uri: 
+      logging.debug('Bing found ' + uri)
       phenny.reply(uri)
       if not hasattr(phenny.bot, 'last_seen_uri'):
          phenny.bot.last_seen_uri = {}
@@ -154,10 +161,12 @@ def duck_search(query):
 def duck(phenny, input): 
    query = input.group(2)
    if not query: return phenny.reply('.ddg what?')
+   logging.debug('Searching Duck Duck Go for ' + query)
 
    query = query.encode('utf-8')
    uri = duck_search(query)
    if uri: 
+      logging.debug('Duck Duck Go found ' + uri)
       phenny.reply(uri)
       if not hasattr(phenny.bot, 'last_seen_uri'):
          phenny.bot.last_seen_uri = {}
@@ -169,6 +178,8 @@ def search(phenny, input):
    if not input.group(2): 
       return phenny.reply('.search for what?')
    query = input.group(2).encode('utf-8')
+   logging.debug('Searching Google, Bing and Duck Duck Go for ' + query)
+   
    gu = google_search(query) or '-'
    bu = bing_search(query) or '-'
    du = duck_search(query) or '-'
@@ -187,6 +198,7 @@ def search(phenny, input):
       if len(du) > 150: du = '(extremely long link)'
       result = '%s (g), %s (b), %s (d)' % (gu, bu, du)
 
+   logging.debug('Google, Bing and Duck Duck Go found ' + result)
    phenny.reply(result)
 search.commands = ['search']
 
@@ -194,9 +206,11 @@ def suggest(phenny, input):
    if not input.group(2):
       return phenny.reply("No query term.")
    query = input.group(2).encode('utf-8')
+   logging.debug('Getting search suggestions for ' + query)
    uri = 'http://websitedev.de/temp-bin/suggest.pl?q='
    answer = web.get(uri + web.urllib.quote(query).replace('+', '%2B'))
    if answer: 
+      logging.debug('Search suggestions found for ' + query + ': ' + answer)
       phenny.say(answer)
    else: phenny.reply('Sorry, no result.')
 suggest.commands = ['suggest']
@@ -236,8 +250,10 @@ def ngc(phenny, input):
    if not input.group(2):
       return phenny.reply("No query term.")
    query = input.group(2).encode('utf-8')
+   logging.debug('Getting number of google results for ' + query)
    result = new_gc(query)
    if result:
+      logging.debug('Number of Google results for ' + result)
       phenny.say(query + ": " + result)
    else: phenny.reply("Sorry, couldn't get a result.")
 
@@ -249,11 +265,13 @@ def gc(phenny, input):
    if not input.group(2):
       return phenny.reply("No query term.")
    query = input.group(2).encode('utf-8')
+   logging.debug('Getting break down of Google result count for ' + query)
    result = query + ": "
    result += (old_gc(query) or "?") + " (api)"
    result += ", " + (newerest_gc(query) or "?") + " (end)"
    result += ", " + (new_gc(query) or "?") + " (site)"
    if '"' in query:
+      logging.debug('Break down of Google result count for ' + result)
       result += ", " + (newest_gc(query) or "?") + " (verbatim)"
    phenny.say(result)
 
