@@ -7,7 +7,7 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
-import re
+import re, logging
 import web
 
 uri = 'http://en.wiktionary.org/w/index.php?title=%s&printable=yes'
@@ -77,6 +77,8 @@ def wwrapper(word):
    etymology, definitions = wiktionary(word)
    if not definitions: 
       return "Couldn't get any definitions for " + word
+   
+   logging.debug('Getting Wiktionary definition for ' + word)
 
    result = format(word, definitions)
    if len(result) < 150: 
@@ -86,6 +88,8 @@ def wwrapper(word):
 
    if len(result) > 300: 
       result = result[:295] + '[...]'
+   
+   logging.debug('Wiktionary definition found: ' + result)
    return result
 
 def w(phenny, input): 
