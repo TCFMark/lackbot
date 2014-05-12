@@ -97,5 +97,18 @@ def w(phenny, input):
 w.commands = ['w']
 w.example = '.w bailiwick'
 
+def getRandomDefinition():
+   from ping import getWordList
+   term = getWordList(1)[1]
+   print term
+   etymology, definitions = wiktionary(term)
+   if not definitions: 
+      return "What's a " + term + "?"
+   return format(term, definitions)
+
+def rw(phenny, input):
+   phenny.say(getRandomDefinition())
+rw.commands = ['rw']
+
 if __name__ == '__main__': 
    print __doc__.strip()

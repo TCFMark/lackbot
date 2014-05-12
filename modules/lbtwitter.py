@@ -93,7 +93,7 @@ def getRandomTweet():
    
    for i in range(0,2):
       try:
-         response = twat.search.tweets(q='%s' % getWordList(1)[0])
+         response = twat.search.tweets(q='%s' % getWordList(1)[1])
          logging.debug('Returning random tweet')
          return response['statuses'][0]
       except IndexError:
