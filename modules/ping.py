@@ -110,8 +110,8 @@ def makehaha():
    return hahaha
 
 def work(phenny, input):
-   logging.debug('Work buzzer going off')
-   phenny.reply('BZZZZZZZT')
+   logging.debug('Work horn going off')
+   phenny.reply('HONK')
 work.rule = r'(?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|(\s|^)(s|\')tory(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).*'
 
 def gross(phenny, input):
