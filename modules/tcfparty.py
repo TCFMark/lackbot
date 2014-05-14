@@ -13,7 +13,7 @@ def tcfparty(en1):
 	
 	logging.debug('Starting a TCFParty!')
 
-	for x in range(0, 32):
+	for x in range(0, 20):
 		# Translate to Japanese
 		en1 = limitLen(en1, 400)
 		try:
