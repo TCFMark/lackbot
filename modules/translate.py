@@ -48,25 +48,25 @@ def translate(text, inputlang='auto', outputlang='en'):
 
 def tr(phenny, context): 
    """Translates a phrase, with an optional language hint."""
-   input, output, phrase = context.groups()
+   inputlang, output, phrase = context.groups()
 
    phrase = phrase.encode('utf-8')
 
    if (len(phrase) > 350) and (not context.admin): 
       return phenny.reply('Phrase must be under 350 characters.')
 
-   input = input or 'auto'
-   input = input.encode('utf-8')
+   inputlang = inputlang or 'auto'
+   inputlang = inputlang.encode('utf-8')
    output = (output or 'en').encode('utf-8')
 
-   if input != output: 
-      msg, input = translate(phrase, input, output)
+   if inputlang != output: 
+      msg, inputlang = translate(phrase, inputlang, output)
       if isinstance(msg, str): 
          msg = msg.decode('utf-8')
       if msg: 
          msg = web.decode(msg) # msg.replace('&#39;', "'")
-         msg = '"%s" (%s to %s, translate.google.com)' % (msg, input, output)
-      else: msg = 'The %s to %s translation failed, sorry!' % (input, output)
+         msg = '"%s" (%s to %s, translate.google.com)' % (msg, inputlang, output)
+      else: msg = 'The %s to %s translation failed, sorry!' % (inputlang, output)
 
       phenny.reply(msg)
    else: phenny.reply('Language guessing failed, so try suggesting one!')
