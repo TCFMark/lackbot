@@ -35,7 +35,6 @@ def translate(text, inputlang='auto', outputlang='en'):
 
    while ',,' in result: 
       result = result.replace(',,', ',null,')
-   result.decode('utf-8').encode('utf-8')
    data = json.loads(result)
 
    if raw: 
