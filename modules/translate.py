@@ -18,7 +18,7 @@ def translate(text, inputlang='auto', outputlang='en'):
       outputlang = outputlang[:-4]
       raw = True
 
-   import urllib2, json
+   import urllib2, simplejson
    opener = urllib2.build_opener()
    opener.addheaders = [(
       'User-Agent', 'Mozilla/5.0' + 
@@ -35,7 +35,9 @@ def translate(text, inputlang='auto', outputlang='en'):
 
    while ',,' in result: 
       result = result.replace(',,', ',null,')
-   data = json.loads(result)
+      result = result.replace('[,', '[null,')
+      result = result.replace(',]', ',null]')
+   data = simplejson.loads(result)
 
    if raw: 
       return str(data), 'en-raw'
