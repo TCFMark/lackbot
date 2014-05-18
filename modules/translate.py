@@ -8,14 +8,14 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
-import re, urllib
+import urllib
 import web
 import random
 
-def translate(text, input='auto', output='en'): 
+def translate(text, inputlang='auto', outputlang='en'): 
    raw = False
-   if output.endswith('-raw'): 
-      output = output[:-4]
+   if outputlang.endswith('-raw'): 
+      outputlang = outputlang[:-4]
       raw = True
 
    import urllib2, json
@@ -26,15 +26,16 @@ def translate(text, input='auto', output='en'):
       'Gecko/20071127 Firefox/2.0.0.11'
    )]
 
-   input, output = urllib.quote(input), urllib.quote(output)
+   inputlang, outputlang = urllib.quote(inputlang), urllib.quote(outputlang)
    text = urllib.quote(text)
 
    result = opener.open('http://translate.google.com/translate_a/t?' +
-      ('client=t&hl=en&sl=%s&tl=%s&multires=1' % (input, output)) + 
+      ('client=t&hl=en&sl=%s&tl=%s&multires=1' % (inputlang, outputlang)) + 
       ('&otf=1&ssel=0&tsel=0&uptl=en&sc=1&text=%s' % text)).read()
 
    while ',,' in result: 
       result = result.replace(',,', ',null,')
+   result.decode('utf-8').encode('utf-8')
    data = json.loads(result)
 
    if raw: 
