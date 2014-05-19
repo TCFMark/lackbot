@@ -196,7 +196,7 @@ r_local = re.compile(r'\([a-z]+_[A-Z]+\)')
 @deprecated
 def f_time(self, origin, match, args): 
    """Returns the current time."""
-   tz = match.group(2) or 'GMT'
+   tz = match.group(2) or 'UTC'
    
    logging.debug('.t called, getting the time for ' + tz)
 
