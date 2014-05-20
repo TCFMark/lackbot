@@ -127,7 +127,7 @@ def smilyface(phenny, input):
       if random.randint(1,3) is 1:
          response = response + (random.randint(1,6) * '~')
       phenny.reply(response)
-smilyface.rule = r'(?i).*?(\:\)|\:D|\:-\)|\:-D).*'
+smilyface.rule = r'(?i).*?(\:\)|\:D|\:-\)|\:-D|;\)|;-\)).*'
 
 if __name__ == '__main__': 
    print __doc__.strip()
