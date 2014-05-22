@@ -152,7 +152,7 @@ class Bot(asynchat.async_chat):
       # Use s-consonant 'cheme for issue #17
       matches = re.findall(r'(?:^|\s)(s+[hz]?(?=(?=c[^i^e])|[bdfgjklmnpqrtvx]).*?)(?=$|\s)', text, re.IGNORECASE)
       for match in matches:
-         replacement = match.replace("s", "'", 1)
+         replacement = match.replace(match[0], "'", 1)
          text = text.replace(match, replacement, 1)
 
       # Loop detection
