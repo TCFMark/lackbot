@@ -3,11 +3,13 @@ ud.py - phenny urban dictionary definitions module
 '''
 
 import logging, json, urllib2
+from urllib import quote
 
 # Useful example: http://api.urbandictionary.com/v0/define?term=rungient
 
 def fetchJson(term):
    opener = urllib2.build_opener()
+   term = quote(term)
    logging.debug('Fetching from http://api.urbandictionary.com/v0/define?term=' + term)
    result = opener.open('http://api.urbandictionary.com/v0/define?term=' + term)
    data = json.load(result)
