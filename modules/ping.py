@@ -121,8 +121,8 @@ def gross(phenny, input):
 gross.rule = r'(?i).*?gross.*'
 
 def smilyface(phenny, input):
-   logging.debug('Smily face!')
    if random.randint(1,3) is 1:
+      logging.debug('Smily face!')
       response = ('8' + (random.randint(1,10) * '=') + 'D')
       if random.randint(1,3) is 1:
          response = response + (random.randint(1,6) * '~')
