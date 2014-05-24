@@ -6,7 +6,7 @@ import re, sys, logging
 
 def correct(phenny, input):
    tring = input.group()
-   matches = re.findall(r'(?:^|\s)(?:"|\')?s+[hz]?((?=(?=c[^i^e])|[bdfgjklmnpqrtvx]).*?)(?=$|\s)', tring, re.IGNORECASE)
+   matches = re.findall(r'(?:^|\s)(?:"|\')?s+[hz]?((?=(?=c[^i^e])|[bdfgjklmnpqrtvx]).*?)(?:"|\')?(?=$|\s)', tring, re.IGNORECASE)
    for match in matches:
       if (not "phinxchild" in match) and (input.nick != "prcjac"):
          logging.debug(input.nick + ' said s' + match + ' when they obviously meant \'' + match)
