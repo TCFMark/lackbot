@@ -107,7 +107,7 @@ def wikipedia(term, language='en', last=False):
                           and not 'This article contains a' in para 
                           and not 'id="coordinates"' in para
                           and not 'class="thumb' in para]
-                          # and not 'style="display:none"' in para]
+                        # and not 'style="display:none"' in para]
 
    for i, para in enumerate(paragraphs): 
       para = para.replace('<sup>', '|')
@@ -214,7 +214,7 @@ def rwik(phenny, input):
 rwik.commands = ['rwik']
 rwik.priority = 'high'
 
-def getFact(firstAttempt=True):
+def getFact():
    global sentenceOnly
    sentenceOnly = True
    
