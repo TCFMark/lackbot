@@ -70,17 +70,7 @@ head.example = '.head http://www.w3.org/'
 r_title = re.compile(r'(?ims)<title[^>]*>(.*?)</title\s*>')
 r_entity = re.compile(r'&[A-Za-z0-9#]+;')
 
-@deprecated
-def f_title(self, origin, match, args): 
-   """.title <URI> - Return the title of URI."""
-   uri = match.group(2)
-   uri = (uri or '').encode('utf-8')
-
-   if not uri and hasattr(self, 'last_seen_uri'): 
-      uri = self.last_seen_uri.get(origin.sender)
-   if not uri: 
-      return self.msg(origin.sender, 'I need a URI to give the title of...')
-
+def f_title(uri): 
    if not ':' in uri: 
       uri = 'http://' + uri
    uri = uri.replace('#!', '?_escaped_fragment_=')
@@ -97,7 +87,7 @@ def f_title(self, origin, match, args):
    ]
    for s in localhost: 
       if uri.startswith(s): 
-         return phenny.reply('Sorry, access forbidden.')
+         return 'Sorry, access forbidden.'
 
    try: 
       redirects = 0
@@ -123,24 +113,21 @@ def f_title(self, origin, match, args):
 
          redirects += 1
          if redirects >= 25: 
-            self.msg(origin.sender, origin.nick + ": Too many redirects")
-            return
+            return "Too many redirects"
 
       try: mtype = info['content-type']
       except: 
          err = ": Couldn't get the Content-Type, sorry"
-         return self.msg(origin.sender, origin.nick + err)
+         return err
       if not (('/html' in mtype) or ('/xhtml' in mtype)): 
-         self.msg(origin.sender, origin.nick + ": Document isn't HTML")
-         return
+         return "Document isn't HTML"
 
       u = urllib2.urlopen(req)
       bytes = u.read(262144)
       u.close()
 
    except IOError: 
-      self.msg(origin.sender, "Can't connect to %s" % uri)
-      return
+      return "Can't connect to %s" % uri
 
    m = r_title.search(bytes)
    if m: 
@@ -177,18 +164,37 @@ def f_title(self, origin, match, args):
 
       title = title.replace('\n', '')
       title = title.replace('\r', '')
-      self.msg(origin.sender, origin.nick + ': ' + title)
-   else: self.msg(origin.sender, origin.nick + ': No title found')
-f_title.commands = ['title']
+      return title
+   else:
+      return 'No title found'
+
+def title(phenny, input):
+   """.title <URI> - Return the title of URI."""
+   uri = input.group(2)
+   uri = (uri or '').encode('utf-8')
+
+   if not uri and hasattr(phenny.bot, 'last_seen_uri'): 
+      uri = phenny.bot.last_seen_uri.get(input.nick)
+   if not uri: 
+      phenny.reply('I need a URI to give the title of...')
+   
+   phenny.reply(f_title(uri))
+title.commands = ['title']
 
 def noteuri(phenny, input): 
+   # Don't duplicate when .title is used
+   if '.title' in input.group(0):
+      return
+   
    uri = input.group(1).encode('utf-8')
    logging.debug('Found URI: ' + uri)
    if not hasattr(phenny.bot, 'last_seen_uri'): 
       phenny.bot.last_seen_uri = {}
    phenny.bot.last_seen_uri[input.sender] = uri
+   
+   # Print title anyway
+   phenny.reply(f_title(uri))
 noteuri.rule = r'.*(http[s]?://[^<> "\x01]+)[,.]?'
-noteuri.priority = 'low'
 
 if __name__ == '__main__': 
    print __doc__.strip()
