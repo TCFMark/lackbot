@@ -58,6 +58,8 @@ def old_gc(query):
 
 def g(phenny, input): 
    """Queries Google for the specified input."""
+   import head
+   
    query = input.group(2)
    if not query: 
       return phenny.reply('.g what?')
@@ -67,12 +69,15 @@ def g(phenny, input):
    uri = google_search(query)
    if uri: 
       logging.debug('Google found ' + uri)
-      phenny.reply(uri)
+      response = uri + ' - ' + head.f_title(uri)
+      phenny.reply(response)
       if not hasattr(phenny.bot, 'last_seen_uri'):
          phenny.bot.last_seen_uri = {}
       phenny.bot.last_seen_uri[input.sender] = uri
-   elif uri is False: phenny.reply("Problem getting data from Google.")
-   else: phenny.reply("No results found for '%s'." % query)
+   elif uri is False: 
+      phenny.reply("Problem getting data from Google.")
+   else: 
+      phenny.reply("No results found for '%s'." % query)
 g.commands = ['g']
 g.priority = 'high'
 g.example = '.g swhack'
