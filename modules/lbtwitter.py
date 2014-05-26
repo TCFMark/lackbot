@@ -28,6 +28,8 @@ if not os.path.exists(TWITTER_CREDENTIALS):
 
 oauth_token, oauth_secret = twitter.read_token_file(TWITTER_CREDENTIALS)
 
+names = ['Bob', 'Bert', 'Keith', 'Clive', 'Nigel', 'Derek', 'Steve', 'Trevor', 'Fred', 'Kenneth', 'Gerry', 'Barry']
+
 def firstTimeAuth():
    logging.debug('Performing first time Twitter authentication')
    twat = twitter.Twitter(auth=twitter.OAuth(oauth_token, oauth_secret, consumer_token, consumer_secret))
@@ -130,7 +132,17 @@ def mangleRandomTweet():
       quit()
    
    text = tweet['text']
-   text = text.replace('@', '')
+   
+   # Replace usernames with real names
+   if '@' in text:
+      import random
+      logging.debug('Replacing usernames with real names')
+      matches = re.findall(r'(?:^|\s)(@.+?)(?=$|\s)', text)
+      matches = set(matches)
+      for match in matches:
+         logging.debug('    Name found: ' + match)
+         text = text.replace(match, random.choice(names))
+
    text = text.replace('#', '')
    text = tcfparty.tcfparty(text)
    return text
