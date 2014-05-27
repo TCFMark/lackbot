@@ -177,13 +177,14 @@ def title(phenny, input):
       uri = phenny.bot.last_seen_uri.get(input.nick)
    if not uri: 
       phenny.reply('I need a URI to give the title of...')
+      return
    
    phenny.reply(f_title(uri))
 title.commands = ['title']
 
 def noteuri(phenny, input): 
    # Don't duplicate when .title is used
-   if '.title' in input.group(0):
+   if ('.title' in input.group(0)) or ('.tw' in input.group(0)):
       return
    
    uri = input.group(1).encode('utf-8')
