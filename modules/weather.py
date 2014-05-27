@@ -7,7 +7,7 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
-import re, urllib
+import re, urllib, logging
 import web
 from tools import deprecated
 
@@ -83,6 +83,8 @@ def f_weather(self, origin, match, args):
    if not icao_code: 
       self.msg(origin.sender, 'No ICAO code found, sorry')
       return
+   
+   logging.debug('Getting weather for ' + icao_code)
 
    uri = 'http://weather.noaa.gov/pub/data/observations/metar/stations/%s.TXT'
    try: bytes = web.get(uri % icao_code)
