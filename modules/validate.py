@@ -7,7 +7,7 @@ Licensed under the Eiffel Forum License 2.
 http://inamidst.com/phenny/
 """
 
-import web
+import web, logging
 
 def val(phenny, input): 
    """Check a webpage using the W3C Markup Validator."""
@@ -16,6 +16,8 @@ def val(phenny, input):
    uri = input.group(2)
    if not uri.startswith('http://'): 
       uri = 'http://' + uri
+      
+   logging.debug('Getting W3C validation for ' + uri)
 
    path = '/check?uri=%s;output=xml' % web.urllib.quote(uri)
    info = web.head('http://validator.w3.org' + path)
@@ -34,6 +36,8 @@ def val(phenny, input):
                result += ' (%s errors)' % n
             else: result += ' (%s error)' % n
    else: result += 'Unvalidatable: no X-W3C-Validator-Status'
+   
+   logging.debug('Validator: ' + result)
 
    phenny.reply(result)
 val.rule = (['val'], r'(?i)(\S+)')
