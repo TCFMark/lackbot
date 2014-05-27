@@ -69,7 +69,8 @@ def g(phenny, input):
    uri = google_search(query)
    if uri: 
       logging.debug('Google found ' + uri)
-      response = uri + ' - ' + head.f_title(uri)
+      title = head.f_title(uri).decode('utf-8')
+      response = uri + ' - ' + title
       phenny.reply(response)
       if not hasattr(phenny.bot, 'last_seen_uri'):
          phenny.bot.last_seen_uri = {}
