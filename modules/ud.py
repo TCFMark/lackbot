@@ -21,6 +21,12 @@ def removeSquareBrackets(tring):
       tring = tring.replace(']', '')
    return tring
 
+def format(tring):
+   removeSquareBrackets(tring)
+   while '\n' in tring:
+      tring = tring.replace('\n', ' | ')
+   return tring
+
 def ud(phenny, input):
    term = input.group(2)
    if not term:
@@ -37,8 +43,8 @@ def ud(phenny, input):
       return phenny.say('Definition not found for ' + term)
    
    # Remove square brackets (which indicate links) from definition and example
-   definition = removeSquareBrackets(definition)
-   example = removeSquareBrackets(example)
+   definition = format(definition)
+   example = format(example)
    
    logging.debug('Definition returned for ' + term + ': ' + definition)
    logging.debug('    Example: ' + example)
