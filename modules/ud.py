@@ -30,8 +30,11 @@ def ud(phenny, input):
    logging.debug('Getting Urban Dictionary definition for ' + term)
    
    data = fetchJson(term)
-   definition = data['list'][0]['definition']
-   example = data['list'][0]['example']
+   try:
+      definition = data['list'][0]['definition']
+      example = data['list'][0]['example']
+   except IndexError:
+      return phenny.say('Definition not found for ' + term)
    
    # Remove square brackets (which indicate links) from definition and example
    definition = removeSquareBrackets(definition)
