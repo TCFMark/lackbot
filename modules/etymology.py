@@ -88,6 +88,7 @@ def etymology(word):
 
 @deprecated
 def f_etymology(self, origin, match, args): 
+   """Gets the etymology for a word from etymonline.com"""
    word = match.group(2)
    
    logging.debug('Getting etymology for ' + word)
@@ -112,6 +113,7 @@ def f_etymology(self, origin, match, args):
 f_etymology.rule = (['ety'], r"(.+?)$")
 f_etymology.thread = True
 f_etymology.priority = 'high'
+f_etymology.example = '.ety trouble'
 
 if __name__=="__main__": 
    import sys
