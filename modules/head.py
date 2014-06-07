@@ -182,7 +182,7 @@ def title(phenny, input):
    phenny.reply(f_title(uri))
 title.commands = ['title']
 
-def noteuri(phenny, input): 
+def noteuri(phenny, input):
    # Don't duplicate when .title is used
    if ('.title' in input.group(0)) or ('.tw' in input.group(0)):
       return
@@ -193,8 +193,9 @@ def noteuri(phenny, input):
       phenny.bot.last_seen_uri = {}
    phenny.bot.last_seen_uri[input.sender] = uri
    
-   # Print title anyway
-   phenny.reply(f_title(uri))
+   # Print title anyway (if it's not obviously an image - see #46)
+   if not bool(re.match('.*(.jpg|.jpeg|.gif|.png|.tiff|.bmp|.svg|.pdf)$', uri, re.I)):
+      phenny.reply(f_title(uri))
 noteuri.rule = r'.*(http[s]?://[^<> "\x01]+)[,.]?'
 
 if __name__ == '__main__': 
