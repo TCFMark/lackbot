@@ -72,6 +72,7 @@ calc.commands = ['calc', 'c']
 calc.example = '.calc 5 + 3'
 
 def py(phenny, input): 
+   """Uses Oblique's python service to run a python command"""
    query = input.group(2).encode('utf-8')
    logging.debug('Using Python service (.py) to run: ' + query)
    uri = 'http://tumbolia.appspot.com/py/'
@@ -83,8 +84,10 @@ def py(phenny, input):
       logging.debug('.py returned no result') 
       phenny.reply('Sorry, no result.')
 py.commands = ['py']
+py.example('.py import random; print random.choice(["yes", "no"])')
 
 def wa(phenny, input): 
+   """Searches Wolfram Alpha"""
    if not input.group(2):
       return phenny.reply("No search term.")
    query = input.group(2).encode('utf-8')
@@ -101,6 +104,7 @@ def wa(phenny, input):
       logging.debug('.wa returned no result') 
       phenny.reply('Sorry, no result.')
 wa.commands = ['wa']
+wa.example = ['.wa weather London UK']
 
 if __name__ == '__main__': 
    print __doc__.strip()
