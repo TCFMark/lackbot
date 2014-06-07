@@ -57,6 +57,19 @@ def tcfparty(en1):
 	logging.debug('Party over; returning: ' + en2)
 	return en2
 
+def party(phenny, input):
+	"""Runs a phrase through TCFParty, lackbot's unofficial Translation Party feature"""
+	phrase = input.group(2)
+	if not phrase:
+		phenny.say('Please enter a phrase.')
+		return
+	
+	logging.debug('.party called')
+	phrase = tcfparty(phrase)
+	phenny.reply(phrase)
+party.commands = ['party']
+party.example = '.party Do a dance for me, lackbot'
+
 def limitLen(tring, limit):
 	if len(tring) > limit:
 		tring = tring[0:limit]
