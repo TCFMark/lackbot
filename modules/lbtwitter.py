@@ -4,7 +4,8 @@ twitter.py - Improved Phenny Twitter Module
 Copyright Mark Hearn
 '''
 
-import re, os, twitter, logging
+import re, os, twitter, logging, HTMLParser
+h = HTMLParser.HTMLParser()
 
 r_username = re.compile(r'^[a-zA-Z0-9_]{1,15}$')
 r_link = re.compile(r'^https?://twitter.com/\S+$')
@@ -46,7 +47,9 @@ def readUserLatestTweet(username):
    
    try: 
       logging.debug('Reading ' + username + '\'s latest tweet')
-      return response[0]['text'] + ' (@' + response[0]['user']['screen_name'] + ')'
+      message = response[0]['text'] + ' (@' + response[0]['user']['screen_name'] + ')'
+      message = h.unescape(message)
+      return message
    except IndexError:
       logging.debug('No tweets found for ' + username)
       return "No tweets found"
@@ -57,7 +60,9 @@ def readIDTweet(id):
    
    try:
       logging.debug('Reading tweet with ID ' + id)
-      return response['text'] + ' (@' + response['user']['screen_name'] + ')'
+      message = response['text'] + ' (@' + response['user']['screen_name'] + ')'
+      message = h.unescape(message)
+      return message
    except IndexError:
       logging.debug('No tweet found with ID ' + id)
       return "Tweet not found"
@@ -85,7 +90,6 @@ def readTweet(phenny, input):
       else: phenny.reply("Give me a link, a username, or a tweet id")  
    except:
       phenny.reply("Give me a link, a username, or a tweet id")  
-   
 readTweet.commands = ['tw']
 readTweet.thread = True
       
@@ -101,7 +105,9 @@ def getRandomTweet():
                        response['statuses'][0]['user']['screen_name'] + '/status/' +
                        response['statuses'][0]['id_str'])
          logging.debug('    Search term: ' + searchterm)
-         return response['statuses'][0]
+         tweet = response['statuses'][0]
+         tweet = h.unescape(tweet)
+         return tweet
       except IndexError:
          pass   
       
