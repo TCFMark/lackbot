@@ -68,6 +68,7 @@ def readIDTweet(id):
       return "Tweet not found"
       
 def readTweet(phenny, input):
+   """Gets the latest tweet for a username, or a specific tweet from a URL or tweet ID"""
    arg = input.group(2)
    if not arg:
       return phenny.reply("Give me a link, a username, or a tweet id")
@@ -92,6 +93,7 @@ def readTweet(phenny, input):
       phenny.reply("Give me a link, a username, or a tweet id")  
 readTweet.commands = ['tw']
 readTweet.thread = True
+readTweet.example = '.tw https://twitter.com/TCFMark/status/440861994263269376'
       
 def getRandomTweet():
    from ping import getWordList
@@ -154,6 +156,7 @@ def mangleRandomTweet():
    return text
 
 def mood(phenny, input):
+   """Mangles a tweet through TCFParty because the Internet"""
    logging.debug('.mood called, mangling a random tweet')
    phenny.say(mangleRandomTweet())
 mood.commands = ['mood']
