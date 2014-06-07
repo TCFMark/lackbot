@@ -181,6 +181,7 @@ def title(phenny, input):
    
    phenny.reply(f_title(uri))
 title.commands = ['title']
+title.example = '.title http://github.com'
 
 def noteuri(phenny, input):
    # Don't duplicate when .title is used
