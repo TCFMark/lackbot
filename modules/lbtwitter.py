@@ -54,6 +54,11 @@ def readUserLatestTweet(username):
       logging.debug('No tweets found for ' + username)
       return "No tweets found"
    
+def replaceNewlines(tring):
+   while '\n' in tring:
+      tring = tring.replace('\n', ' | ')
+   return tring
+   
 def readIDTweet(id):
    twitterAuth()
    response = twat.statuses.show(_id=id)
@@ -80,15 +85,20 @@ def readTweet(phenny, input):
    try:
       if arg.isdigit():
          logging.debug('.tw called with ID')
-         phenny.say(readIDTweet(arg))
+         message = readIDTweet(arg)
       elif r_username.match(arg):
          logging.debug('.tw called with username')
-         phenny.say(readUserLatestTweet(arg))
+         message = readUserLatestTweet(arg)
       elif r_link.match(arg):
          logging.debug('.tw called with URL')
          tweetID = arg.split('/')[5]
-         phenny.say(readIDTweet(tweetID))
-      else: phenny.reply("Give me a link, a username, or a tweet id")  
+         message = readIDTweet(tweetID)
+      else: 
+         phenny.reply("Give me a link, a username, or a tweet id")  
+         return
+      
+      message = replaceNewlines(message)
+      phenny.say(message)
    except:
       phenny.reply("Give me a link, a username, or a tweet id")  
 readTweet.commands = ['tw']
@@ -125,6 +135,8 @@ def randomTweet(phenny, input):
    
    output = tweet['text'] + ' (@' + tweet['user']['screen_name'] + ')'
    logging.debug('.rtw called, saying tweet: ' + output)
+   
+   output = replaceNewlines(output)
    phenny.say(output)
 randomTweet.commands = ['rtw']
 randomTweet.thread = True
