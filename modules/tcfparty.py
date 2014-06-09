@@ -3,7 +3,7 @@
 '''TCFParty: Unofficial Translation Party API
 '''
 
-import translate, logging
+import translate, logging, re
 
 def tcfparty(en1):
 	en2 = None
@@ -12,6 +12,14 @@ def tcfparty(en1):
 	input = en1
 	
 	logging.debug('Starting a TCFParty!')
+	
+	# Extract URLs from phrase
+	urls = re.findall(r'.*?(http[s]?://[^<> "\x01]+)[,.]?', en1)
+	if urls:
+		logging.debug('URLs found in party phrase: ')
+		for url in urls:
+			logging.debug('    ' + url)
+			en1 = en1.replace(url, '', 1)
 
 	for x in range(0, 20):
 		# Translate to Japanese
@@ -53,6 +61,12 @@ def tcfparty(en1):
 	else:
 		logging.debug('Returned empty; returning input.')
 		return input
+
+	# Plonk URLs back on the end of the string
+	if urls:
+		en2 = en2 + ' -'
+		for url in urls:
+			en2 = en2 + ' ' + url
 
 	logging.debug('Party over; returning: ' + en2)
 	return en2
