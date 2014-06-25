@@ -25,6 +25,8 @@ def format(tring):
    removeSquareBrackets(tring)
    while '\n' in tring:
       tring = tring.replace('\n', ' | ')
+   while ' |  | ' in tring:
+      tring = tring.replace(' |  | ', ' | ')
    return tring
 
 def ud(phenny, input):
