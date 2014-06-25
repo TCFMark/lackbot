@@ -57,6 +57,8 @@ def readUserLatestTweet(username):
 def replaceNewlines(tring):
    while '\n' in tring:
       tring = tring.replace('\n', ' | ')
+   while ' |  | ' in tring:
+      tring = tring.replace(' |  | ', ' | ')
    return tring
    
 def readIDTweet(id):
