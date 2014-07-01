@@ -26,3 +26,16 @@ def chat(phenny, input):
       phenny.reply(tcfparty.tcfparty(phrase))
 chat.rule = r'$nickname:\s+(.*)'
 
+def mention(phenny, input):
+   phrase = input.group(1).strip()
+   selector = random.randint(1,2)
+   logging.debug('lackbot mentioned, selector rolled a ' + str(selector))
+   if selector <= 1:
+      logging.debug('Confused reply')
+      reply = random.choice(["What's that?", "Too right!", "Say whaat?!?", "Hmm?", "Pardon?"])
+      phenny.reply(reply)
+   elif selector <= 2:
+      logging.debug('Replying with a party of the input')
+      import tcfparty
+      phenny.reply(tcfparty.tcfparty(phrase))
+mention.rule = r'(.+$nickname.*)'
