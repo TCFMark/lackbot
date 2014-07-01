@@ -155,8 +155,6 @@ def wikipedia(term, language='en', last=False):
    return sentence + ' - ' + (wikiuri % (language, term))
 
 def wikwrapper(origterm): 
-   if not origterm: 
-      return 'Perhaps you meant ".wik Zen"?'
    origterm = origterm.encode('utf-8')
 
    term = urllib.unquote(origterm)
@@ -181,6 +179,10 @@ def wikwrapper(origterm):
       return 'Can\'t find anything in Wikipedia for "%s".' % origterm
 
 def wik(phenny, input):
+   if not input.group(2):
+      phenny.say('Perhaps you meant ".wik Zen"?')
+      return
+
    global sentenceOnly
    sentenceOnly = False
    logging.debug('Getting Wikipedia article for ' + input.group(2))
