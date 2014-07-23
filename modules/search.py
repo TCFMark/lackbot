@@ -56,11 +56,12 @@ def formatnumber(n):
 def old_gc(query):
    return formatnumber(google_count(query))
 
-def g(phenny, input): 
+def g(phenny, input, query=None): 
    """Queries Google for the specified input."""
    import head
    
-   query = input.group(2)
+   if not query:
+      query = input.group(2)
    if not query: 
       return phenny.reply('.g what?')
    logging.debug('Googling ' + query)
@@ -82,6 +83,14 @@ def g(phenny, input):
 g.commands = ['g']
 g.priority = 'high'
 g.example = '.g swhack'
+
+def yt(phenny, input):
+   """Queries Google for YouTube videos."""
+   query = "site:youtube.com " + input.group(2)
+   g(phenny, input, query=query)
+yt.commands = ['yt']
+yt.priority = 'high'
+yt.example = '.yt children falling over'
 
 def oldgc(phenny, input): 
    """Returns the number of Google results for the specified input."""
