@@ -236,6 +236,7 @@ def fact(phenny, input):
    factoid = getFact()
    phenny.say("Fact! " + factoid)
 fact.commands = ['fact']
+fact.rule = r'(?i)fact[!]?$'
 fact.priority = 'high'
 
 if __name__ == '__main__': 
