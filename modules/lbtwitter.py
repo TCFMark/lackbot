@@ -135,12 +135,12 @@ def searchTweet(phenny, input):
    
    tweet = getRandomTweet(searchterm=arg)
    if tweet is None:
-      logging.debug('.stw called, but no tweet found')
-      phenny.say('Sorry, I\'m rubbish at this')
+      logging.debug('.stw called with arg "' + arg + ', but no tweet found')
+      phenny.say("I didn't find anything for " + arg)
       return
 
    output = tweet['text'] + ' (@' + tweet['user']['screen_name'] + ')'
-   logging.debug('.stw called, saying tweet: ' + output)
+   logging.debug('.stw called with arg "' + arg + '", saying tweet: ' + output)
 
    output = replaceNewlines(output)
    phenny.say(output)
