@@ -107,13 +107,14 @@ readTweet.commands = ['tw']
 readTweet.thread = True
 readTweet.example = '.tw https://twitter.com/TCFMark/status/440861994263269376'
       
-def getRandomTweet():
+def getRandomTweet(searchterm=''):
    from ping import getWordList
    twitterAuth()
    
    for i in range(0,2):
       try:
-         searchterm = getWordList(1)[1]
+         if searchterm is None:
+            searchterm = getWordList(1)[1]
          response = twat.search.tweets(q='%s' % searchterm)
          logging.debug('Returning random tweet: http://twitter.com/' + 
                        response['statuses'][0]['user']['screen_name'] + '/status/' +
@@ -127,13 +128,33 @@ def getRandomTweet():
       
    return None
 
+def searchTweet(phenny, input):
+   arg = input.group(2)
+   if not arg:
+      return phenny.reply("I need a search term.")
+   
+   tweet = getRandomTweet(searchterm=arg)
+   if tweet is None:
+      logging.debug('.stw called, but no tweet found')
+      phenny.say('Sorry, I\'m rubbish at this')
+      return
+
+   output = tweet['text'] + ' (@' + tweet['user']['screen_name'] + ')'
+   logging.debug('.stw called, saying tweet: ' + output)
+
+   output = replaceNewlines(output)
+   phenny.say(output)
+searchTweet.commands = ['stw']
+searchTweet.thread = True
+searchTweet.example = '.stw cumpkin'
+
 def randomTweet(phenny, input):
    tweet = getRandomTweet()
    
    if tweet is None:
       logging.debug('.rtw called, but no tweet found')
       phenny.say('Sorry, I\'m rubbish at this')
-      quit()
+      return
    
    output = tweet['text'] + ' (@' + tweet['user']['screen_name'] + ')'
    logging.debug('.rtw called, saying tweet: ' + output)
