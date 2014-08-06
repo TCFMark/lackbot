@@ -113,7 +113,7 @@ def getRandomTweet(searchterm=''):
    
    for i in range(0,2):
       try:
-         if searchterm is None:
+         if not searchterm:
             searchterm = getWordList(1)[1]
          response = twat.search.tweets(q='%s' % searchterm)
          logging.debug('Returning random tweet: http://twitter.com/' + 
