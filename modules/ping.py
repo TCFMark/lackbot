@@ -116,7 +116,7 @@ work.rule = r'(?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|seahorse|donkey|romp|tnfc|
 
 def gross(phenny, input):
    logging.debug('Gross')
-   response = random.choice(['icky', 'yuck', 'gross', 'filfy', 'beastly', 'hurk!', 'how horrid', 'blech!', 'narstee', 'grim'])
+   response = random.choice(['icky', 'yuck', 'gross', 'filfy', 'beastly', 'hurk!', 'how horrid', 'blech!', 'narstee', 'grim', 'net'])
    phenny.say(response)
 gross.rule = r'(?i).*?gross.*'
 
