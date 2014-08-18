@@ -68,7 +68,7 @@ def wow(phenny, input):
       phenny.say(random.choice(["so ", "such "]) + phenny.nick)
       phenny.say(random.choice(["many ", "how "]) + input.nick)
       phenny.say(random.choice(["much ", "very "]) + input.sender)
-wow.rule = r'(?i)wow$'
+wow.rule = r'(?i)wow.*'
 
 def nsfw(phenny, input):
    logging.debug('Assuring SFWness to ' + input.nick)
