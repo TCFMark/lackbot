@@ -5,6 +5,8 @@
 
 import translate, logging, re
 
+LENGTH_LIMIT = 400
+
 def tcfparty(en1):
 	en2 = None
 	en0 = None
@@ -23,7 +25,7 @@ def tcfparty(en1):
 
 	for x in range(0, 20):
 		# Translate to Japanese
-		en1 = limitLen(en1, 400)
+		en1 = limitLen(en1, LENGTH_LIMIT)
 		try:
 			logging.debug('    auto to ja: ' + en1)
 			ja, _lang = translate.translate(en1, 'auto', 'ja')
@@ -33,7 +35,7 @@ def tcfparty(en1):
 		ja = ja.encode('utf-8')
 
 		# Translate back to English
-		ja = limitLen(ja, 400)
+		ja = limitLen(ja, LENGTH_LIMIT)
 		try:
 			logging.debug('    ja to en: ' + ja)
 			en2, _lang = translate.translate(ja, 'ja', 'en')
