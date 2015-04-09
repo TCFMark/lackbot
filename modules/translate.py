@@ -29,9 +29,10 @@ def translate(text, inputlang='auto', outputlang='en'):
    inputlang, outputlang = urllib.quote(inputlang), urllib.quote(outputlang)
    text = urllib.quote(text)
 
-   result = opener.open('http://translate.google.com/translate_a/t?' +
-      ('client=t&hl=en&sl=%s&tl=%s&multires=1' % (inputlang, outputlang)) + 
-      ('&otf=1&ssel=0&tsel=0&uptl=en&sc=1&text=%s' % text)).read()
+   result = opener.open('http://translate.google.com/translate_a/single?' +
+      'client=t&ie=UTF-8&oe=UTF-8' +
+      ('&hl=en&sl=%s&tl=%s&multires=1' % (inputlang, outputlang)) + 
+      ('&otf=1&ssel=0&tsel=0&uptl=en&sc=1&q=%s' % text)).read()
 
    while ',,' in result: 
       result = result.replace(',,', ',null,')
