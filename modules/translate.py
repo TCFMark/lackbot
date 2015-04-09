@@ -11,6 +11,7 @@ http://inamidst.com/phenny/
 import urllib
 import web
 import random
+import logging
 
 def translate(text, inputlang='auto', outputlang='en'): 
    raw = False
@@ -29,10 +30,13 @@ def translate(text, inputlang='auto', outputlang='en'):
    inputlang, outputlang = urllib.quote(inputlang), urllib.quote(outputlang)
    text = urllib.quote(text)
 
-   result = opener.open('http://translate.google.com/translate_a/single?' +
-      'client=t&ie=UTF-8&oe=UTF-8' +
-      ('&hl=en&sl=%s&tl=%s&multires=1' % (inputlang, outputlang)) + 
-      ('&otf=1&ssel=0&tsel=0&uptl=en&sc=1&q=%s' % text)).read()
+   builturl = 'http://translate.google.com/translate_a/single?' \
+      'client=t&ie=UTF-8&oe=UTF-8' \
+      '&hl=en&sl=' + inputlang + '&tl=' + outputlang + \
+      '&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t&dt=at' \
+      '&multires=1&otf=1&ssel=0&tsel=0&uptl=en&sc=1&q=' + text
+   logging.debug('Requesting translation using URL: ' + builturl)
+   result = opener.open(builturl).read()
 
    while ',,' in result: 
       result = result.replace(',,', ',null,')
