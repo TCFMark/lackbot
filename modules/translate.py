@@ -12,13 +12,13 @@ import urllib
 import web
 import random
 import logging
+import os
 
-def translate(text, inputlang='auto', outputlang='en'): 
+# Include the trailing slash
+YANDEX_BASEURL = 'https://translate.yandex.net/api/v1.5/'
+
+def translate(text, inputlang='auto', outputlang='en'):
    raw = False
-   if outputlang.endswith('-raw'): 
-      outputlang = outputlang[:-4]
-      raw = True
-
    import urllib2, json
    opener = urllib2.build_opener()
    opener.addheaders = [(
@@ -27,30 +27,35 @@ def translate(text, inputlang='auto', outputlang='en'):
       'Gecko/20071127 Firefox/2.0.0.11'
    )]
 
+   # Get the API key
+   fileloc = os.path.expanduser('~/.phenny/yandexcredentials')
+   f = open(fileloc)
+   key = f.read()
+   f.close()
+
+   # Clean the inputs
    inputlang, outputlang = urllib.quote(inputlang), urllib.quote(outputlang)
    text = urllib.quote(text)
+   key = key.rstrip()
+   if inputlang is 'auto':
+      inputlang = ''
+   else:
+      inputlang = inputlang + '-'
 
-   builturl = 'http://translate.google.com/translate_a/single?' \
-      'client=t&ie=UTF-8&oe=UTF-8' \
-      '&hl=en&sl=' + inputlang + '&tl=' + outputlang + \
-      '&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t&dt=at' \
-      '&multires=1&otf=1&ssel=0&tsel=0&uptl=en&sc=1&q=' + text
+   builturl = YANDEX_BASEURL + 'tr.json/translate?key=' + key + \
+         '&lang=' + inputlang + outputlang + \
+         '&text=' + text
    logging.debug('Requesting translation using URL: ' + builturl)
    result = opener.open(builturl).read()
 
-   while ',,' in result: 
-      result = result.replace(',,', ',null,')
-      result = result.replace('[,', '[null,')
-      result = result.replace(',]', ',null]')
    data = json.loads(result)
 
    if raw: 
       return str(data), 'en-raw'
 
-   try: language = data[2] # -2][0][0]
-   except: language = '?'
+   language = data['lang'].split('-')[0]
 
-   return ''.join(x[0] for x in data[0]), language
+   return data['text'][0], language
 
 def tr(phenny, context): 
    """Translates a phrase, with an optional language hint."""
