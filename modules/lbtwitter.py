@@ -29,7 +29,7 @@ if not os.path.exists(TWITTER_CREDENTIALS):
 
 oauth_token, oauth_secret = twitter.read_token_file(TWITTER_CREDENTIALS)
 
-names = ['Bob', 'Bert', 'Keith', 'Clive', 'Nigel', 'Derek', 'Steve', 'Trevor', 'Fred', 'Kenneth', 'Gerry', 'Barry']
+names = ['Bob', 'Bert', 'Keith', 'Clive', 'Nigel', 'Derek', 'Steve', 'Trevor', 'Fred', 'Kenneth', 'Gerry', 'Barry', 'Graham']
 
 def firstTimeAuth():
    logging.debug('Performing first time Twitter authentication')
