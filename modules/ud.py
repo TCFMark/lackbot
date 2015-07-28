@@ -46,11 +46,17 @@ def ud(phenny, input):
    
    # Remove square brackets (which indicate links) from definition and example
    definition = format(definition)
-   example = format(example)
+   if example is not None:
+      example = format(example)
    
    logging.debug('Definition returned for ' + term + ': ' + definition)
-   logging.debug('    Example: ' + example)
+   if example is not None:
+      logging.debug('    Example: ' + example)
+   else:
+      logging.debug('    Example not found')
+
    phenny.say(term + ': ' + definition)
-   phenny.say('Example: ' + example)
+   if example is not None:
+      phenny.say('Example: ' + example)
 ud.commands = ['ud']
 ud.priority = 'high'
