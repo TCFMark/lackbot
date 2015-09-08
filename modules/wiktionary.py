@@ -23,7 +23,10 @@ def text(html):
    return text
 
 def wiktionary(word):
-   bytes = urllib2.urlopen(uri % urllib.quote(word.encode('utf-8'))).read()
+   try:
+      bytes = urllib2.urlopen(uri % urllib.quote(word.encode('utf-8'))).read()
+   except:
+      return None, None
    bytes = r_ul.sub('', str(bytes))
 
    mode = None
