@@ -8,7 +8,7 @@ http://inamidst.com/phenny/
 """
 
 import re, urllib, gzip, StringIO
-import web, tcfparty, logging
+import tcfparty, logging, urllib2
 
 wikiuri = 'http://%s.wikipedia.org/wiki/%s'
 # wikisearch = 'http://%s.wikipedia.org/wiki/Special:Search?' \
@@ -67,8 +67,8 @@ def wikipedia(term, language='en', last=False):
       else: t = term
       q = urllib.quote(t)
       u = wikiuri % (language, q)
-      bytes = web.get(u)
-   else: bytes = web.get(wikiuri % (language, term))
+      bytes = str(urllib2.urlopen(u).read())
+   else: bytes = str(urllib2.urlopen(wikiuri % (language, term)))
 
    if bytes.startswith('\x1f\x8b\x08\x00\x00\x00\x00\x00'): 
       f = StringIO.StringIO(bytes)
