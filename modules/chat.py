@@ -13,9 +13,8 @@ def chat(phenny, input):
       import vincent
       phenny.reply(vincent.question(phrase))
    elif selector <= 2:
-      logging.debug('Replying with a mangled tweet')
-      import lbtwitter
-      phenny.reply(lbtwitter.mangleRandomTweet())
+      logging.debug('I LIKE FOOD')
+      phenny.reply("I LIKE FOOD")
    elif selector <= 3:
       logging.debug('Replying with a "fact"')
       import wikipedia
@@ -24,7 +23,7 @@ def chat(phenny, input):
       logging.debug('Replying with a party of the input')
       import tcfparty
       phenny.reply(tcfparty.tcfparty(phrase))
-chat.rule = r'$nickname:\s+(.*)'
+chat.rule = r'(?i)$nickname:\s+(.*)'
 
 def mention(phenny, input):
    phrase = input.group(1).strip()
@@ -37,5 +36,7 @@ def mention(phenny, input):
    elif selector <= 2:
       logging.debug('Replying with a party of the input')
       import tcfparty
+      phrase = phrase.replace(phenny.nick, input.nick)
       phenny.reply(tcfparty.tcfparty(phrase))
-mention.rule = r'(.+$nickname.*)'
+mention.rule = r'(?i)(.*$nickname(?!:).*)'
+
