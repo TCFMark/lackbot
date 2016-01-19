@@ -56,7 +56,7 @@ def ud(phenny, input):
       logging.debug('    Example not found')
 
    phenny.say(term + ': ' + definition)
-   if example is not None:
+   if example is not None and example != "":
       phenny.say('Example: ' + example)
 ud.commands = ['ud']
 ud.priority = 'high'
