@@ -11,7 +11,7 @@ import random, logging
 # https://mail.python.org/pipermail/tutor/2001-June/006301.html
 def getWordList(minwords):
    import string, os
-   wordfile = '/usr/share/dict/words'
+   wordfile = '/home/local/msh/.phenny/words'
    stat = os.stat(wordfile)
    # the filesize is the 7th element of the array
    flen = stat[6]
@@ -109,10 +109,10 @@ def makehaha():
       hahaha = hahaha + 'ha'
    return hahaha
 
-def work(phenny, input):
-   logging.debug('Work horn going off')
-   phenny.reply('HONK')
-work.rule = r'(?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).*'
+#def work(phenny, input):
+#   logging.debug('Work horn going off')
+#   phenny.reply('HONK')
+#work.rule = r'(?i).*?(cfl|corefiling|(\s|^)wiki(\s|$)|seahorse|donkey|romp|tnfc|tnwsp|magnify|spidermonkey|smmf|plega|djb|xiif|xbrl|(\s|^)sys(\s|$)|synerg).*'
 
 def gross(phenny, input):
    logging.debug('Gross')
@@ -120,14 +120,56 @@ def gross(phenny, input):
    phenny.say(response)
 gross.rule = r'(?i).*?gross.*'
 
-def smilyface(phenny, input):
-   if random.randint(1,3) is 1:
-      logging.debug('Smily face!')
-      response = ('8' + (random.randint(1,10) * '=') + 'D')
-      if random.randint(1,3) is 1:
-         response = response + (random.randint(1,6) * '~')
-      phenny.reply(response)
-smilyface.rule = r'(?i).*?(\:\)|\:D|\:-\)|\:-D|;\)|;-\)).*'
+def food(phenny, input):
+   logging.debug('I LIKE FOOD')
+   reply = random.choice(['I LIKE FOOD',
+       'Food is my friend',
+       'I eat things!',
+       'Where\'s the nearest dinner?',
+       'Cake pls',
+       'I eat wit my robot mouth',
+       'Sometimes I let other people eat the things I own',
+       'wow, so food, how eating',
+       'A fruit a day makes the dentist go away',
+       'Please stop saying that word'
+       'If you can\'t feed a hundred people, just feed me',
+       'msh made me and even he says I\'m annoying',
+       'I\'m not allowed outside because I eat mud',
+       'Drinking is for idiots',
+       'EATING',
+       'Cheese, smile!',
+       'Is it lunch time yet?',
+       'Lunch time!',
+       'for food in foods: food(eat)',
+       'Eggscuse me, could you tell me a yolk?',
+       'Foo... ahhhhhh you nearly got me! I\'m not saying anything this time!',
+       'Foodball? What is this foodball you guys keep talking about?',
+       'My favourite sandwich filling is CoreFilling',
+       "hunterschicken2",
+       "Good CoreFilers never book holidays on pizza meeting days!",
+       "I'll have me one CoreFillet burger please",
+       "I don't have a tongue so none of my opinions are valid",
+       "It must be terrible being the last banana in a bunch, seeing your friends stripped and eaten one by one, your own health worsening daily",
+       "Man walks into a breakfast bar and gets porridge on his shoes",
+       "Surely horsemeat sandals would just disintegrate?",
+       "Crisps are just savoury breakfast cereal",
+       "Many hands spoil the broth",
+       "Food with a face tastes delicious",
+       input.nick + " might be vegetarian, might be meatetarian. I'm a humanitarian",
+       "Special fried rice for special people, like " + input.nick,
+       "The Royal Fusilliers are in charge of the Queen's pasta #QueenFacts",
+       "the pig walked into the shop and the lady said we dont make types of meat in this shop"])
+   phenny.say(reply)
+food.rule = r'(?i).+food.*'
+
+#def smilyface(phenny, input):
+#   if random.randint(1,3) is 1:
+#      logging.debug('Smily face!')
+#      response = ('8' + (random.randint(1,10) * '=') + 'D')
+#      if random.randint(1,3) is 1:
+#         response = response + (random.randint(1,6) * '~')
+#      phenny.reply(response)
+#smilyface.rule = r'(?i).*?(\:\)|\:D|\:-\)|\:-D|;\)|;-\)).*'
 
 if __name__ == '__main__': 
    print __doc__.strip()
