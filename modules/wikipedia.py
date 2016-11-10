@@ -225,9 +225,10 @@ def getFact():
       factoid = tcfparty.tcfparty(factoid)
       return factoid
    except UnicodeDecodeError:
-      logging.debug('getFact failed, lackbot having a mood')
-      import lbtwitter
-      return lbtwitter.mangleRandomTweet()
+       return "Robots are better than people!"
+#      logging.debug('getFact failed, lackbot having a mood')
+#      import lbtwitter
+#      return lbtwitter.mangleRandomTweet()
 
    sentenceOnly = False
 
