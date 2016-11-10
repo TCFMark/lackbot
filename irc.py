@@ -150,10 +150,10 @@ class Bot(asynchat.async_chat):
                time.sleep(wait - elapsed)
                
       # Use s-consonant 'cheme for issue #17
-      matches = re.findall(r'(?:^|\s)(?:"|\')?(s[hz]?(?=(?=c[^i^e])|[bdfgjklmnpqrtvx]).*?)(?=$|\s)', text, re.IGNORECASE)
-      for match in matches:
-         replacement = match.replace(match[0], "'", 1)
-         text = text.replace(match, replacement, 1)
+      #matches = re.findall(r'(?:^|\s)(?:"|\')?(s[hz]?(?=(?=c[^i^e])|[bdfgjklmnpqrtvx]).*?)(?=$|\s)', text, re.IGNORECASE)
+      #for match in matches:
+      #   replacement = match.replace(match[0], "'", 1)
+      #   text = text.replace(match, replacement, 1)
 
       # Loop detection
       messages = [m[1] for m in self.stack[-8:]]
